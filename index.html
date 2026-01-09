@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DS Renovations | Premium Home Renovation & Construction Services | Staffordshire</title>
-    <meta name="description" content="DS Renovations delivers exceptional renovation, construction, and restoration services across Staffordshire and the West Midlands. Expert plastering, kitchens, bathrooms, carpentry, and damage restoration.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="name="description" content="DS Renovations delivers exceptional renovation, construction, and restoration services across Staffordshire and the West Midlands. Expert plastering, kitchens, bathrooms, carpentry, and damage restoration.">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             --text-gray: #64748b;
             --bg-light: #f8fafc;
             --bg-white: #ffffff;
-            --border-light: #e2e8f0;    
+            --border-light: #e2e8f0;
         }
 
         * {
@@ -79,10 +79,19 @@
             gap: 8px;
         }
 
-        /* Added styles for logo image */
+        /* Updated logo to use latestlogo.jpg with responsive sizing */
         .logo img {
-            height: 45px;
+            height: 50px;
             width: auto;
+            max-width: 280px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 40px;
+                max-width: 220px;
+            }
         }
 
         .logo-accent {
@@ -1167,8 +1176,9 @@
     <!-- Header -->
     <header id="header">
         <nav>
+            <!-- Updated logo to use new latestlogo.jpg image -->
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="DS Renovations Logo">
+                <img src="/images/latestlogo.jpg" alt="DS Renovations - Built On Innovation, Integrity And Results">
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active">Home</a></li>

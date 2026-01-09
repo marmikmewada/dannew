@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extensions - DS Renovations | Expert Home Extension Services</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #1a2332;
+            --secondary-gold: #c9a962;
+            --accent-cream: #f8f6f1;
+            --text-dark: #2c3e50;
+            --text-light: #6c7a89;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            max-width: 280px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-gold);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-gold);
+        }
+
+        .cta-button {
+            background: var(--secondary-gold);
+            color: var(--white);
+            padding: 0.75rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary-gold);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #2c3e50 100%);
+            padding: 120px 2rem 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-gold);
+            text-decoration: none;
+        }
+
+        /* Service Content */
+        .service-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 60px;
+        }
+
+        .main-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-navy);
+        }
+
+        .main-content h3 {
+            font-size: 1.75rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--primary-navy);
+        }
+
+        .main-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-content ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .main-content ul li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .main-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--accent-cream);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-navy);
+        }
+
+        .sidebar-services {
+            list-style: none;
+        }
+
+        .sidebar-services li {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-services a {
+            display: block;
+            padding: 1rem;
+            background: var(--white);
+            text-decoration: none;
+            color: var(--text-dark);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-services a:hover,
+        .sidebar-services a.active {
+            border-left-color: var(--secondary-gold);
+            background: var(--white);
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-box {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-box .cta-button {
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            max-width: 250px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: 0.3s;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .logo img {
+                height: 45px;
+                max-width: 220px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .main-content h2 {
+                font-size: 2rem;
+            }
+
+            .main-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .logo img {
+                height: 40px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="latestlogo.jpg" alt="DS Renovations - Built On Innovation, Integrity And Results">
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="cta-button">Get Quote</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="services.html">Services</a>
+                <span>/</span>
+                <span>Extensions</span>
+            </div>
+            <h1>Home Extensions</h1>
+            <p>Create the extra space your family needs without the stress and expense of moving. Our expertly designed and built extensions seamlessly blend with your existing property while adding significant value.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content">
+        <div class="content-grid">
+            <div class="main-content">
+                <h2>Professional Home Extension Services</h2>
+                <p>Whether you need more living space, a larger kitchen, or an additional bedroom, a well-designed extension offers the perfect solution. At DS Renovations, we specialize in creating beautiful extensions that complement your home's existing character while meeting modern living standards.</p>
+
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1600" alt="Modern home extension" class="service-image">
+
+                <h3>Types of Extensions We Build</h3>
+                <ul>
+                    <li>Single-Storey Extensions - Perfect for kitchen diners and living spaces</li>
+                    <li>Two-Storey Extensions - Maximum space addition with bedrooms above</li>
+                    <li>Side Return Extensions - Ideal for terraced and semi-detached homes</li>
+                    <li>Rear Extensions - Popular choice for kitchen and dining areas</li>
+                    <li>Wrap-Around Extensions - Combining side and rear for maximum space</li>
+                    <li>Orangeries and Garden Rooms - Light-filled living spaces</li>
+                    <li>Garage Conversions - Transform unused space into living areas</li>
+                </ul>
+
+                <h3>Our Extension Building Process</h3>
+                <p>We manage every aspect of your extension project, from initial concept through to final completion. Our comprehensive service ensures a stress-free experience with minimal disruption to your daily life.</p>
+
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600" alt="Extension construction" class="service-image">
+
+                <ul>
+                    <li>Free consultation and site survey</li>
+                    <li>Architectural design and 3D visualizations</li>
+                    <li>Planning permission and building regulations support</li>
+                    <li>Structural engineering and calculations</li>
+                    <li>Complete groundworks and foundations</li>
+                    <li>Brickwork matching existing property</li>
+                    <li>Roofing and weatherproofing</li>
+                    <li>Window and door installation</li>
+                    <li>Electrical and plumbing work</li>
+                    <li>Plastering and internal finishing</li>
+                    <li>Flooring installation</li>
+                    <li>Heating system integration</li>
+                    <li>Final decorating and snagging</li>
+                </ul>
+
+                <h3>Planning Permission & Building Regulations</h3>
+                <p>Many extensions fall under permitted development rights and don't require planning permission. However, every project must comply with building regulations. We handle all aspects of this process, including submitting applications, liaising with authorities, and ensuring full compliance with current regulations.</p>
+
+                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1600" alt="Completed extension" class="service-image">
+
+                <h3>Why Extend Your Home?</h3>
+                <p>A home extension offers numerous benefits compared to moving house. You avoid estate agent fees, stamp duty, and the stress of relocating. Instead, you create a home perfectly tailored to your needs while significantly increasing your property's value. Most well-designed extensions add more value than they cost to build.</p>
+
+                <p>Our team works closely with you to understand your lifestyle and requirements, ensuring your extension not only provides extra space but enhances how you live in your home. From open-plan kitchen diners perfect for family life to peaceful home offices for remote working, we create spaces that truly work for you.</p>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3>Our Services</h3>
+                    <ul class="sidebar-services">
+                        <li><a href="service-home-renovations.html">Home Renovations</a></li>
+                        <li><a href="service-loft-conversions.html">Loft Conversions</a></li>
+                        <li><a href="service-extensions.html" class="active">Extensions</a></li>
+                        <li><a href="service-new-builds.html">New Builds</a></li>
+                        <li><a href="service-restoration.html">Restoration</a></li>
+                        <li><a href="service-kitchen-bathroom.html">Kitchen & Bathroom</a></li>
+                    </ul>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Ready to Start?</h3>
+                    <p>Get a free, no-obligation quote for your extension project.</p>
+                    <a href="contact.html" class="cta-button">Get Free Quote</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-logo">
+                <img src="latestlogo.jpg" alt="DS Renovations">
+                <p>Excellence in construction and renovation services across Staffordshire and surrounding areas.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="service-home-renovations.html">Home Renovations</a>
+                <a href="service-loft-conversions.html">Loft Conversions</a>
+                <a href="service-extensions.html">Extensions</a>
+                <a href="service-new-builds.html">New Builds</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Unit 7, Brocton<br>Staffordshire, ST17 0TH</p>
+                <p>Phone: 07739 382536</p>
+                <p>Email: info@dsrenovations.co.uk</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/dsrenovations247" target="_blank" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/dsrenovations247" target="_blank" aria-label="Instagram">i</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DS Renovations. All rights reserved. | Built On Innovation, Integrity And Results</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
