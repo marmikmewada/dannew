@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Bathroom Design & Installation | DS Renovations</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #1a2332;
+            --accent-gold: #d4af37;
+            --cream: #f8f6f3;
+            --dark-gray: #2c3e50;
+            --light-gray: #ecf0f1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .header {
+            background: var(--white);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #c49d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-navy);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #2c3e50 100%);
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=85') center/cover;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .service-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Content Section */
+        .service-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .main-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--primary-navy);
+            margin: 2.5rem 0 1.25rem;
+        }
+
+        .main-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-content ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .main-content ul li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .main-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+        }
+
+        .sidebar-card ul li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-card a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .sidebar-card a:hover {
+            color: var(--accent-gold);
+        }
+
+        .quote-card {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .quote-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .quote-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .feature-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--accent-gold);
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 55px;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                display: none;
+                gap: 1.5rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .service-hero {
+                padding: 5rem 2rem 4rem;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="latestlogo.jpg" alt="DS Renovations - Built On Innovation, Integrity And Results">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get Quote</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="services.html">Services</a>
+                <span>/</span>
+                <span>Bathrooms</span>
+            </div>
+            <h1>Luxury Bathroom Design & Installation</h1>
+            <p>Transform your bathroom into a luxurious sanctuary with our complete design and installation service. From contemporary to classic styles, we create bathrooms that combine elegance, functionality, and lasting quality.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content">
+        <div class="content-grid">
+            <div class="main-content">
+                <h2>Create Your Dream Bathroom</h2>
+                <p>Your bathroom should be more than just functional—it should be a personal retreat where you can relax and rejuvenate. At DS Renovations, we specialize in creating luxurious bathrooms that perfectly balance style, comfort, and practicality.</p>
+                
+                <p>Whether you're looking for a sleek contemporary design, a traditional classic bathroom, or something uniquely tailored to your taste, our expert team will guide you through every step of the process—from initial design concepts to the final installation.</p>
+
+                <h3>Our Bathroom Services Include</h3>
+                <ul>
+                    <li>Complete bathroom design and planning</li>
+                    <li>Full bathroom installations and refurbishments</li>
+                    <li>Luxury walk-in showers and wet rooms</li>
+                    <li>Freestanding and fitted bathtub installations</li>
+                    <li>Contemporary and traditional vanity units</li>
+                    <li>Underfloor heating systems</li>
+                    <li>Premium tiling and waterproofing</li>
+                    <li>Lighting design and installation</li>
+                    <li>Plumbing and electrical work</li>
+                    <li>Heated towel rails and accessories</li>
+                </ul>
+
+                <h3>Why Choose DS Renovations for Your Bathroom?</h3>
+                <p>With over 15 years of experience in bathroom installations, we understand that attention to detail makes all the difference. We work with premium brands and materials to ensure your bathroom not only looks stunning but also stands the test of time.</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h4>Bespoke Design</h4>
+                        <p>Custom designs tailored to your space, style, and budget with 3D visualizations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Complete Service</h4>
+                        <p>From plumbing and electrical work to tiling and finishing touches—we handle everything.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h4>Premium Quality</h4>
+                        <p>We only use high-quality fixtures, fittings, and materials from trusted brands.</p>
+                    </div>
+                </div>
+
+                <h3>The Installation Process</h3>
+                <p><strong>1. Consultation & Design:</strong> We start with a detailed consultation to understand your vision, requirements, and budget. Our designers will create a comprehensive plan with 3D renders.</p>
+                
+                <p><strong>2. Planning & Preparation:</strong> We handle all necessary building regulations, prepare the space, and organize the supply of all materials and fixtures.</p>
+                
+                <p><strong>3. Installation:</strong> Our skilled craftsmen carry out the complete installation, including plumbing, electrical work, tiling, and fitting all fixtures and accessories.</p>
+                
+                <p><strong>4. Finishing Touches:</strong> We complete the project with meticulous attention to detail, ensuring every element is perfect before final handover.</p>
+
+                <h3>Bathroom Styles We Create</h3>
+                <ul>
+                    <li><strong>Contemporary:</strong> Clean lines, minimalist design, and modern fixtures</li>
+                    <li><strong>Traditional:</strong> Classic elegance with period features and timeless appeal</li>
+                    <li><strong>Luxury Spa:</strong> High-end finishes with wellness features for ultimate relaxation</li>
+                    <li><strong>En-Suite:</strong> Space-efficient designs that maximize smaller areas</li>
+                    <li><strong>Family Bathroom:</strong> Practical, durable, and stylish for busy households</li>
+                </ul>
+
+                <p>Ready to transform your bathroom? Contact us today for a free consultation and quote. Let's create the bathroom of your dreams together.</p>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="service-plastering.html">Plastering</a></li>
+                        <li><a href="service-bathrooms.html" style="color: var(--accent-gold); font-weight: 600;">Bathrooms</a></li>
+                        <li><a href="service-kitchens.html">Kitchens</a></li>
+                        <li><a href="service-carpentry.html">Carpentry</a></li>
+                        <li><a href="service-water-damage.html">Water Damage</a></li>
+                        <li><a href="service-fire-damage.html">Fire Damage</a></li>
+                    </ul>
+                </div>
+
+                <div class="quote-card">
+                    <h3>Get a Free Quote</h3>
+                    <p>Transform your bathroom with DS Renovations. Contact us for a free, no-obligation consultation.</p>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="section-header">
+                <h2>Our Bathroom Projects</h2>
+                <p>Explore some of our recently completed luxury bathroom installations</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=85" alt="Modern Bathroom Installation">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=800&q=85" alt="Luxury Bathroom Design">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&q=85" alt="Contemporary Bathroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="latestlogo.jpg" alt="DS Renovations">
+                </div>
+                <p>Expert renovation, restoration, and construction services delivered with precision, care, and attention to every detail.</p>
+                <p><strong>Phone:</strong> <a href="tel:07553560801">07553 560801</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@dsrenovations.co.uk">info@dsrenovations.co.uk</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="service-home-renovations.html">Home Renovations</a></li>
+                    <li><a href="service-loft-conversions.html">Loft Conversions</a></li>
+                    <li><a href="service-extensions.html">Extensions</a></li>
+                    <li><a href="service-new-builds.html">New Builds</a></li>
+                    <li><a href="service-restoration.html">Restoration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:07553560801">07553 560801</a></li>
+                    <li><a href="mailto:info@dsrenovations.co.uk">info@dsrenovations.co.uk</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DS Renovations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

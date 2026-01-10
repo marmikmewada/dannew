@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen & Bathroom Renovations | DS Renovations</title>
+    <meta name="description" content="Transform your kitchen and bathroom with DS Renovations. Expert design, installation, and renovation services in Staffordshire.">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #d4af37;
+            --accent-dark: #b8941f;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-light: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-white);
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.08);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            max-width: 450px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 55px;
+                max-width: 300px;
+            }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--accent);
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: var(--bg-white) !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-nav::before {
+            display: none;
+        }
+
+        .cta-nav:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .page-hero {
+            margin-top: 88px;
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(30, 41, 59, 0.92) 100%),
+                        url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1920&q=90');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--bg-white);
+            padding: 3rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-content p {
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            padding: 6rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .process-section {
+            background: var(--bg-light);
+            padding: 6rem 3rem;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-white);
+            border-radius: 12px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .gallery-section {
+            padding: 6rem 3rem;
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .cta-section {
+            background: var(--primary);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 6rem 3rem;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 2.5rem;
+            background: var(--accent);
+            color: var(--bg-white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--bg-white);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            max-width: 400px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 1024px) {
+            .features-grid,
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .page-hero {
+                min-height: 50vh;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid,
+            .process-steps,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="/images/latestlogo.jpg" alt="DS Renovations Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="cta-nav">Get Quote</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>Kitchen & Bathroom Renovations</h1>
+            <p>Transform your most important living spaces with stunning design and expert craftsmanship</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Create Your Dream Kitchen & Bathroom</h2>
+        <p class="section-text">
+            Your kitchen and bathroom are more than functional spaces—they're the heart of your home and your personal sanctuary. At DS Renovations, we specialize in creating beautiful, practical spaces that perfectly balance style, functionality, and quality. From contemporary minimalism to classic elegance, we bring your vision to life with meticulous attention to detail.
+        </p>
+        <p class="section-text">
+            Our comprehensive approach covers everything from initial design consultation to final installation. We work with premium materials, trusted suppliers, and skilled craftspeople to ensure every element—from cabinetry and countertops to tiling and fixtures—meets our exacting standards and exceeds your expectations.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🍳</div>
+                <h3>Kitchen Renovations</h3>
+                <p>Complete kitchen transformations including bespoke cabinetry, worktop installation, kitchen islands, integrated appliances, lighting design, and flooring. We create functional, beautiful kitchens that become the heart of your home.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛁</div>
+                <h3>Bathroom Remodeling</h3>
+                <p>Full bathroom renovations from compact ensuite to luxury spa bathrooms. Including walk-in showers, freestanding baths, vanity units, underfloor heating, and premium tiling work that transforms your daily routine.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Premium Materials</h3>
+                <p>We source the finest materials from trusted suppliers—natural stone, engineered quartz, hardwood cabinetry, designer fixtures, and premium tiles. Quality materials ensure longevity and timeless appeal.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Full Service Installation</h3>
+                <p>Our team handles all aspects including plumbing, electrical work, plastering, tiling, carpentry, and decorating. One point of contact, seamless coordination, exceptional results.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <h2 class="section-title" style="text-align: center;">Our Renovation Process</h2>
+            <p class="section-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                From concept to completion, we guide you through every stage of your kitchen or bathroom transformation with clarity, professionalism, and exceptional craftsmanship.
+            </p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Design Consultation</h3>
+                    <p>We meet to understand your vision, lifestyle needs, budget, and design preferences for your ideal space.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Space Planning</h3>
+                    <p>Detailed measurements, layout design, material selection, and 3D visualizations to perfect your new space.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Professional Installation</h3>
+                    <p>Our skilled team handles all trades—plumbing, electrical, tiling, carpentry—with precision and care.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Final Touches</h3>
+                    <p>Quality checks, finishing details, and final walkthrough to ensure everything is perfect before handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">Recent Kitchen & Bathroom Projects</h2>
+            <p class="section-text" style="max-width: 700px; margin: 0 auto;">
+                Explore our portfolio of stunning kitchen and bathroom transformations across Staffordshire and the West Midlands.
+            </p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=90" alt="Modern Kitchen">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=90" alt="Luxury Bathroom">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800&q=90" alt="Contemporary Kitchen">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=90" alt="Classic Bathroom">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=90" alt="Kitchen Island">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=90" alt="Spa Bathroom">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Let's discuss your kitchen or bathroom renovation project today</p>
+        <a href="contact.html" class="btn">Get Free Consultation</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="/images/latestlogo.jpg" alt="DS Renovations Logo">
+                </div>
+                <p class="footer-about">
+                    DS Renovations delivers exceptional renovation, construction, and restoration services across Staffordshire and the West Midlands. Built on innovation, integrity, and results.
+                </p>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="service-home-renovations.html">Home Renovations</a></li>
+                    <li><a href="service-loft-conversions.html">Loft Conversions</a></li>
+                    <li><a href="service-extensions.html">Extensions</a></li>
+                    <li><a href="service-new-builds.html">New Builds</a></li>
+                    <li><a href="service-restoration.html">Restoration</a></li>
+                    <li><a href="service-kitchen-bathroom.html">Kitchens & Bathrooms</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Our Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li>Staffordshire, UK</li>
+                    <li>Phone: 07784 324501</li>
+                    <li>Email: info@dsrenovations.co.uk</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DS Renovations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileToggle.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
