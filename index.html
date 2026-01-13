@@ -1,1659 +1,1894 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS Renovations | Premium Home Renovation & Construction Services | Staffordshire</title>
-    <meta name="name="description" content="DS Renovations delivers exceptional renovation, construction, and restoration services across Staffordshire and the West Midlands. Expert plastering, kitchens, bathrooms, carpentry, and damage restoration.">
-    <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      DS Renovations | Premium Home Renovation & Construction Services |
+      Staffordshire
+    </title>
+    <meta name="name="description" content="DS Renovations delivers exceptional
+    renovation, construction, and restoration services across Staffordshire and
+    the West Midlands. Expert plastering, kitchens, bathrooms, carpentry, and
+    damage restoration.">
+    <link rel="icon" type="image/x-icon" href="logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* CSS Variables */
-        :root {
-            --primary: #0f172a;
-            --primary-light: #1e293b;
-            --accent: #d4af37;
-            --accent-dark: #b8941f;
-            --text-dark: #1e293b;
-            --text-gray: #64748b;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --border-light: #e2e8f0;
-        }
+      /* CSS Variables */
+      :root {
+        --primary: #0f172a;
+        --primary-light: #1e293b;
+        --accent: #d4af37;
+        --accent-dark: #b8941f;
+        --text-dark: #1e293b;
+        --text-gray: #64748b;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border-light: #e2e8f0;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: var(--bg-white);
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: var(--bg-white);
+        overflow-x: hidden;
+      }
 
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-white);
-            z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-bottom: 1px solid transparent;
-        }
+      /* Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--bg-white);
+        z-index: 1000;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 1px solid transparent;
+      }
 
-        header.scrolled {
-            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.08);
-            border-bottom-color: var(--border-light);
-        }
+      header.scrolled {
+        box-shadow: 0 4px 30px rgba(15, 23, 42, 0.08);
+        border-bottom-color: var(--border-light);
+      }
 
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.5rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-        /* Updated logo to use latestlogo.jpg with responsive sizing */
+      /* Updated logo to use latestlogo.jpg with responsive sizing */
+      .logo img {
+        height: 50px;
+        width: auto;
+        max-width: 280px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 768px) {
         .logo img {
-            height: 50px;
-            width: auto;
-            max-width: 280px;
-            object-fit: contain;
+          height: 40px;
+          max-width: 220px;
         }
+      }
 
-        @media (max-width: 768px) {
-            .logo img {
-                height: 40px;
-                max-width: 220px;
-            }
+      .logo-accent {
+        color: var(--accent);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        transition: color 0.3s ease;
+        letter-spacing: 0.3px;
+      }
+
+      .nav-menu a::before {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        color: var(--accent);
+      }
+
+      .nav-menu a:hover::before,
+      .nav-menu a.active::before {
+        width: 100%;
+      }
+
+      .cta-nav {
+        background: var(--accent);
+        color: var(--bg-white) !important;
+        padding: 0.75rem 1.75rem;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-nav::before {
+        display: none;
+      }
+
+      .cta-nav:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .mobile-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .mobile-toggle span {
+        width: 26px;
+        height: 2px;
+        background: var(--primary);
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      /* Hero Section */
+      .hero {
+        margin-top: 88px;
+        min-height: 92vh;
+        background: linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.96) 0%,
+            rgba(30, 41, 59, 0.94) 100%
+          ),
+          url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: linear-gradient(to bottom, transparent, var(--bg-white));
+      }
+
+      .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 3rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(212, 175, 55, 0.15);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        color: var(--accent);
+        padding: 0.6rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 2rem;
+        animation: fadeSlideDown 0.8s ease-out;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        color: var(--bg-white);
+        line-height: 1.1;
+        margin-bottom: 1.75rem;
+        max-width: 900px;
+        letter-spacing: -2px;
+        animation: fadeSlideUp 1s ease-out 0.2s both;
+      }
+
+      .hero-subtitle {
+        font-size: 1.35rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        max-width: 650px;
+        margin-bottom: 3rem;
+        font-weight: 400;
+        animation: fadeSlideUp 1s ease-out 0.4s both;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        animation: fadeSlideUp 1s ease-out 0.6s both;
+      }
+
+      .btn {
+        padding: 1.1rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 0.3px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: var(--bg-white);
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--bg-white);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--bg-white);
+        transform: translateY(-3px);
+      }
+
+      /* Trust Bar */
+      .trust-section {
+        background: var(--bg-white);
+        padding: 4rem 3rem;
+        margin-top: -60px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .trust-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        background: var(--bg-white);
+        padding: 3rem;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      }
+
+      .trust-item {
+        text-align: center;
+        padding: 1.5rem;
+        border-right: 1px solid var(--border-light);
+      }
+
+      .trust-item:last-child {
+        border-right: none;
+      }
+
+      .trust-number {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        line-height: 1;
+      }
+
+      .trust-label {
+        font-size: 1rem;
+        color: var(--text-gray);
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+
+      /* Services Section */
+      .services-section {
+        padding: 8rem 3rem;
+        background: var(--bg-light);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 5rem;
+      }
+
+      .section-tag {
+        display: inline-block;
+        color: var(--accent);
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 3.25rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        letter-spacing: -1px;
+      }
+
+      .section-description {
+        font-size: 1.15rem;
+        color: var(--text-gray);
+        line-height: 1.8;
+      }
+
+      .services-grid {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+
+      .service-card {
+        background: var(--bg-white);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+        cursor: pointer;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+      }
+
+      .service-image {
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .service-card:hover .service-image img {
+        transform: scale(1.08);
+      }
+
+      .service-tag {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--accent);
+        color: var(--bg-white);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .service-content {
+        padding: 2.25rem;
+      }
+
+      .service-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      .service-description {
+        color: var(--text-gray);
+        line-height: 1.8;
+        margin-bottom: 1.75rem;
+        font-size: 0.975rem;
+      }
+
+      .service-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: gap 0.3s ease;
+      }
+
+      .service-link:hover {
+        gap: 14px;
+      }
+
+      /* About Preview */
+      .about-preview {
+        padding: 8rem 3rem;
+        background: var(--bg-white);
+      }
+
+      .about-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 6rem;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        letter-spacing: -1px;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        color: var(--text-gray);
+        line-height: 1.9;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--bg-light);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .feature-text {
+        flex: 1;
+      }
+
+      .feature-text h4 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+      }
+
+      .feature-text p {
+        font-size: 0.9rem;
+        color: var(--text-gray);
+        margin: 0;
+      }
+
+      .about-images {
+        position: relative;
+        height: 600px;
+      }
+
+      .about-image-main {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+      }
+
+      .about-image-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .about-badge {
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        background: var(--primary);
+        color: var(--bg-white);
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+        text-align: center;
+        min-width: 200px;
+      }
+
+      .about-badge-number {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .about-badge-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* Projects Gallery */
+      .projects-section {
+        padding: 8rem 3rem;
+        background: var(--primary);
+        color: var(--bg-white);
+      }
+
+      .projects-section .section-tag,
+      .projects-section .section-title,
+      .projects-section .section-description {
+        color: inherit;
+      }
+
+      .projects-section .section-tag {
+        color: var(--accent);
+      }
+
+      .projects-grid {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .project-card {
+        position: relative;
+        height: 400px;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(15, 23, 42, 0.95),
+          rgba(15, 23, 42, 0) 80%
+        );
+        padding: 2.5rem;
+        transform: translateY(60%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .project-card:hover .project-overlay {
+        transform: translateY(0);
+      }
+
+      .project-category {
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--bg-white);
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+
+      .project-description {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transition: opacity 0.4s ease 0.1s;
+      }
+
+      .project-card:hover .project-description {
+        opacity: 1;
+      }
+
+      .view-all-projects {
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      /* Testimonials */
+      .testimonials-section {
+        padding: 8rem 3rem;
+        background: var(--bg-light);
+      }
+
+      .testimonials-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .testimonials-slider {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .testimonial {
+        background: var(--bg-white);
+        padding: 4rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+        text-align: center;
+        display: none;
+      }
+
+      .testimonial.active {
+        display: block;
+        animation: fadeIn 0.6s ease;
+      }
+
+      .testimonial-stars {
+        color: var(--accent);
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        letter-spacing: 4px;
+      }
+
+      .testimonial-text {
+        font-size: 1.35rem;
+        font-style: italic;
+        color: var(--text-dark);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+      }
+
+      .author-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--bg-white);
+      }
+
+      .author-info h4 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+      }
+
+      .author-info p {
+        font-size: 0.95rem;
+        color: var(--text-gray);
+      }
+
+      .testimonial-dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 2.5rem;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--border-light);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .dot.active {
+        background: var(--accent);
+        width: 30px;
+        border-radius: 5px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 8rem 3rem;
+        background: linear-gradient(
+            135deg,
+            var(--primary) 0%,
+            var(--primary-light) 100%
+          ),
+          url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=90");
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: multiply;
+        text-align: center;
+        color: var(--bg-white);
+        position: relative;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 30% 50%,
+          rgba(212, 175, 55, 0.1),
+          transparent 60%
+        );
+      }
+
+      .cta-content {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-content h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.75rem;
+        letter-spacing: -1px;
+      }
+
+      .cta-content p {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        opacity: 0.9;
+      }
+
+      .cta-features {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-feature {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .cta-feature-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(212, 175, 55, 0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+
+      .cta-feature-text {
+        text-align: left;
+      }
+
+      .cta-feature-text h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .cta-feature-text p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin: 0;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary);
+        color: var(--bg-white);
+        padding: 5rem 3rem 2rem;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .footer-about h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-about .logo-accent {
+        color: var(--accent);
+      }
+
+      .footer-about p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-size: 0.975rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--bg-white);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .footer-column h4 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--bg-white);
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-column a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .footer-column a:hover {
+        color: var(--accent);
+        padding-left: 5px;
+      }
+
+      .footer-contact p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .footer-contact strong {
+        color: var(--bg-white);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .footer-bottom {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
-
-        .logo-accent {
-            color: var(--accent);
+        to {
+          opacity: 1;
         }
+      }
 
+      @keyframes fadeSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeSlideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            align-items: center;
+          position: fixed;
+          top: 88px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 88px);
+          background: var(--bg-white);
+          flex-direction: column;
+          justify-content: flex-start;
+          padding: 3rem 2rem;
+          gap: 2rem;
+          transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
         }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s ease;
-            letter-spacing: 0.3px;
-        }
-
-        .nav-menu a::before {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--accent);
-        }
-
-        .nav-menu a:hover::before,
-        .nav-menu a.active::before {
-            width: 100%;
-        }
-
-        .cta-nav {
-            background: var(--accent);
-            color: var(--bg-white) !important;
-            padding: 0.75rem 1.75rem;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cta-nav::before {
-            display: none;
-        }
-
-        .cta-nav:hover {
-            background: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        .nav-menu.active {
+          left: 0;
         }
 
         .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 8px;
+          display: flex;
         }
 
-        .mobile-toggle span {
-            width: 26px;
-            height: 2px;
-            background: var(--primary);
-            transition: all 0.3s ease;
-            border-radius: 2px;
+        .mobile-toggle.active span:nth-child(1) {
+          transform: rotate(45deg) translate(8px, 8px);
         }
 
-        /* Hero Section */
-        .hero {
-            margin-top: 88px;
-            min-height: 92vh;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(30, 41, 59, 0.94) 100%),
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+        .mobile-toggle.active span:nth-child(2) {
+          opacity: 0;
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to bottom, transparent, var(--bg-white));
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--accent);
-            padding: 0.6rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 2rem;
-            animation: fadeSlideDown 0.8s ease-out;
+        .mobile-toggle.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(8px, -8px);
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 800;
-            color: var(--bg-white);
-            line-height: 1.1;
-            margin-bottom: 1.75rem;
-            max-width: 900px;
-            letter-spacing: -2px;
-            animation: fadeSlideUp 1s ease-out 0.2s both;
-        }
-
-        .hero-subtitle {
-            font-size: 1.35rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.8;
-            max-width: 650px;
-            margin-bottom: 3rem;
-            font-weight: 400;
-            animation: fadeSlideUp 1s ease-out 0.4s both;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-            animation: fadeSlideUp 1s ease-out 0.6s both;
-        }
-
-        .btn {
-            padding: 1.1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: 0.3px;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg-white);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--bg-white);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--bg-white);
-            transform: translateY(-3px);
-        }
-
-        /* Trust Bar */
-        .trust-section {
-            background: var(--bg-white);
-            padding: 4rem 3rem;
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
+          font-size: 3.25rem;
         }
 
         .trust-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            background: var(--bg-white);
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
-        }
-
-        .trust-item {
-            text-align: center;
-            padding: 1.5rem;
-            border-right: 1px solid var(--border-light);
-        }
-
-        .trust-item:last-child {
-            border-right: none;
-        }
-
-        .trust-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-
-        .trust-label {
-            font-size: 1rem;
-            color: var(--text-gray);
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        /* Services Section */
-        .services-section {
-            padding: 8rem 3rem;
-            background: var(--bg-light);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 5rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .section-description {
-            font-size: 1.15rem;
-            color: var(--text-gray);
-            line-height: 1.8;
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .services-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: var(--bg-white);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
-        }
-
-        .service-image {
-            height: 280px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card:hover .service-image img {
-            transform: scale(1.08);
-        }
-
-        .service-tag {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--accent);
-            color: var(--bg-white);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .service-content {
-            padding: 2.25rem;
-        }
-
-        .service-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .service-description {
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 1.75rem;
-            font-size: 0.975rem;
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: gap 0.3s ease;
-        }
-
-        .service-link:hover {
-            gap: 14px;
-        }
-
-        /* About Preview */
-        .about-preview {
-            padding: 8rem 3rem;
-            background: var(--bg-white);
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .about-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.2;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin: 2.5rem 0;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: start;
-            gap: 1rem;
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-light);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .feature-text {
-            flex: 1;
-        }
-
-        .feature-text h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .feature-text p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin: 0;
+          grid-template-columns: 1fr;
+          gap: 4rem;
         }
 
         .about-images {
-            position: relative;
-            height: 600px;
-        }
-
-        .about-image-main {
-            width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
-        }
-
-        .about-image-main img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-badge {
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            background: var(--primary);
-            color: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
-            text-align: center;
-            min-width: 200px;
-        }
-
-        .about-badge-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-badge-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* Projects Gallery */
-        .projects-section {
-            padding: 8rem 3rem;
-            background: var(--primary);
-            color: var(--bg-white);
-        }
-
-        .projects-section .section-tag,
-        .projects-section .section-title,
-        .projects-section .section-description {
-            color: inherit;
-        }
-
-        .projects-section .section-tag {
-            color: var(--accent);
+          order: -1;
         }
 
         .projects-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .project-card {
-            position: relative;
-            height: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .project-card:hover .project-image {
-            transform: scale(1.1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0) 80%);
-            padding: 2.5rem;
-            transform: translateY(60%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .project-card:hover .project-overlay {
-            transform: translateY(0);
-        }
-
-        .project-category {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--bg-white);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .project-description {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            opacity: 0;
-            transition: opacity 0.4s ease 0.1s;
-        }
-
-        .project-card:hover .project-description {
-            opacity: 1;
-        }
-
-        .view-all-projects {
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        /* Testimonials */
-        .testimonials-section {
-            padding: 8rem 3rem;
-            background: var(--bg-light);
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonials-slider {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .testimonial {
-            background: var(--bg-white);
-            padding: 4rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
-            text-align: center;
-            display: none;
-        }
-
-        .testimonial.active {
-            display: block;
-            animation: fadeIn 0.6s ease;
-        }
-
-        .testimonial-stars {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            letter-spacing: 4px;
-        }
-
-        .testimonial-text {
-            font-size: 1.35rem;
-            font-style: italic;
-            color: var(--text-dark);
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.25rem;
-        }
-
-        .author-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--bg-white);
-        }
-
-        .author-info h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .author-info p {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-        }
-
-        .testimonial-dots {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 2.5rem;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--border-light);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: var(--accent);
-            width: 30px;
-            border-radius: 5px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 8rem 3rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%),
-                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=90');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: multiply;
-            text-align: center;
-            color: var(--bg-white);
-            position: relative;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 60%);
-        }
-
-        .cta-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.75rem;
-            letter-spacing: -1px;
-        }
-
-        .cta-content p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
-
-        .cta-features {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .cta-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .cta-feature-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .cta-feature-text {
-            text-align: left;
-        }
-
-        .cta-feature-text h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .cta-feature-text p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: var(--bg-white);
-            padding: 5rem 3rem 2rem;
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        nav {
+          padding: 1.25rem 1.5rem;
         }
 
-        .footer-about h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        .hero {
+          margin-top: 76px;
         }
 
-        .footer-about .logo-accent {
-            color: var(--accent);
+        .hero-content {
+          padding: 3rem 1.5rem;
         }
 
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 0.975rem;
+        .hero h1 {
+          font-size: 2.5rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 12px;
+        .hero-subtitle {
+          font-size: 1.1rem;
         }
 
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--bg-white);
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+        .hero-cta {
+          flex-direction: column;
         }
 
-        .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+        .btn {
+          width: 100%;
+          justify-content: center;
         }
 
-        .footer-column h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--bg-white);
+        .trust-container {
+          grid-template-columns: 1fr;
+          padding: 2rem;
+          gap: 2rem;
         }
 
-        .footer-column ul {
-            list-style: none;
+        .trust-item {
+          border-right: none;
+          border-bottom: 1px solid var(--border-light);
+          padding-bottom: 1.5rem;
         }
 
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
+        .trust-item:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
         }
 
-        .footer-column a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: inline-block;
+        .services-section,
+        .about-preview,
+        .projects-section,
+        .testimonials-section,
+        .cta-section {
+          padding: 5rem 1.5rem;
         }
 
-        .footer-column a:hover {
-            color: var(--accent);
-            padding-left: 5px;
+        .section-title {
+          font-size: 2.25rem;
         }
 
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.8;
+        .services-grid {
+          grid-template-columns: 1fr;
         }
 
-        .footer-contact strong {
-            color: var(--bg-white);
-            display: block;
-            margin-bottom: 0.25rem;
+        .about-features {
+          grid-template-columns: 1fr;
         }
 
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 2.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+        .about-images {
+          height: 400px;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .about-badge {
+          left: 50%;
+          transform: translateX(-50%);
         }
 
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .projects-grid {
+          grid-template-columns: 1fr;
         }
 
-        @keyframes fadeSlideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .testimonial {
+          padding: 2.5rem 1.5rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nav-menu {
-                position: fixed;
-                top: 88px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 88px);
-                background: var(--bg-white);
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 3rem 2rem;
-                gap: 2rem;
-                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .mobile-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(8px, 8px);
-            }
-
-            .mobile-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(8px, -8px);
-            }
-
-            .hero h1 {
-                font-size: 3.25rem;
-            }
-
-            .trust-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-
-            .about-images {
-                order: -1;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 3rem;
-            }
+        .testimonial-text {
+          font-size: 1.15rem;
         }
 
-        @media (max-width: 640px) {
-            nav {
-                padding: 1.25rem 1.5rem;
-            }
-
-            .hero {
-                margin-top: 76px;
-            }
-
-            .hero-content {
-                padding: 3rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .trust-container {
-                grid-template-columns: 1fr;
-                padding: 2rem;
-                gap: 2rem;
-            }
-
-            .trust-item {
-                border-right: none;
-                border-bottom: 1px solid var(--border-light);
-                padding-bottom: 1.5rem;
-            }
-
-            .trust-item:last-child {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-
-            .services-section,
-            .about-preview,
-            .projects-section,
-            .testimonials-section,
-            .cta-section {
-                padding: 5rem 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2.25rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-
-            .about-images {
-                height: 400px;
-            }
-
-            .about-badge {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .testimonial-text {
-                font-size: 1.15rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .cta-features {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
+        .cta-content h2 {
+          font-size: 2.5rem;
         }
+
+        .cta-features {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header id="header">
-        <nav>
-            <!-- Updated logo to use new latestlogo.jpg image -->
-            <a href="index.html" class="logo">
-                <img src="/images/latestlogo.jpg" alt="DS Renovations - Built On Innovation, Integrity And Results">
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="cta-nav">Get Quote</a></li>
-            </ul>
-            <div class="mobile-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+      <nav>
+        <!-- Updated logo to use new latestlogo.jpg image -->
+        <a href="index.html" class="logo">
+          <img
+            src="/images/latestlogo.jpg"
+            alt="DS Renovations - Built On Innovation, Integrity And Results"
+          />
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="cta-nav">Get Quote</a></li>
+        </ul>
+        <div class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
     </header>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                ⭐ Trusted by 200+ Homeowners in Staffordshire
-            </div>
-            <h1>Exceptional Tradesmen for Your Dream Home</h1>
-            <p class="hero-subtitle">Expert renovation, restoration, and construction services delivered with precision, care, and attention to every detail.</p>
-            <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary">Request Free Quote →</a>
-                <a href="gallery.html" class="btn btn-secondary">View Portfolio</a>
-            </div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          ⭐ Trusted by 200+ Homeowners in Staffordshire
         </div>
+        <h1>Exceptional Tradesmen for Your Dream Home</h1>
+        <p class="hero-subtitle">
+          Expert renovation, restoration, and construction services delivered
+          with precision, care, and attention to every detail.
+        </p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary"
+            >Request Free Quote →</a
+          >
+          <a href="gallery.html" class="btn btn-secondary">View Portfolio</a>
+        </div>
+      </div>
     </section>
 
     <!-- Trust Bar -->
     <section class="trust-section">
-        <div class="trust-container">
-            <div class="trust-item">
-                <div class="trust-number">15+</div>
-                <div class="trust-label">Years Experience</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-number">500+</div>
-                <div class="trust-label">Projects Completed</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-number">100%</div>
-                <div class="trust-label">Customer Satisfaction</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-number">24/7</div>
-                <div class="trust-label">Emergency Support</div>
-            </div>
+      <div class="trust-container">
+        <div class="trust-item">
+          <div class="trust-number">15+</div>
+          <div class="trust-label">Years Experience</div>
         </div>
+        <div class="trust-item">
+          <div class="trust-number">500+</div>
+          <div class="trust-label">Projects Completed</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">100%</div>
+          <div class="trust-label">Customer Satisfaction</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">24/7</div>
+          <div class="trust-label">Emergency Support</div>
+        </div>
+      </div>
     </section>
 
     <!-- Services -->
     <section class="services-section">
-        <div class="section-header">
-            <div class="section-tag">Our Services</div>
-            <h2 class="section-title">Comprehensive Renovation Solutions</h2>
-            <p class="section-description">From initial concept to final touches, we deliver exceptional quality across all aspects of home renovation and restoration.</p>
+      <div class="section-header">
+        <div class="section-tag">Our Services</div>
+        <h2 class="section-title">Comprehensive Renovation Solutions</h2>
+        <p class="section-description">
+          From initial concept to final touches, we deliver exceptional quality
+          across all aspects of home renovation and restoration.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div
+          class="service-card"
+          onclick="window.location='service-plastering.html'"
+        >
+          <div class="service-image">
+            <img
+              src="./plastering.jpg"
+              alt="Professional Plastering Services"
+            />
+            <div class="service-tag">Popular</div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Plastering</h3>
+            <p class="service-description">
+              Flawless walls and ceilings with expert plastering techniques.
+              From smooth finishes to decorative plasterwork.
+            </p>
+            <a href="service-plastering.html" class="service-link"
+              >Learn More →</a
+            >
+          </div>
         </div>
-        <div class="services-grid">
-            <div class="service-card" onclick="window.location='service-plastering.html'">
-                <div class="service-image">
-                    <img src="./plastering.jpg" alt="Professional Plastering Services">
-                    <div class="service-tag">Popular</div>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Plastering</h3>
-                    <p class="service-description">Flawless walls and ceilings with expert plastering techniques. From smooth finishes to decorative plasterwork.</p>
-                    <a href="service-plastering.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
 
-            <div class="service-card" onclick="window.location='service-bathrooms.html'">
-                <div class="service-image">
-                    <img src="./bathroom.jpg" alt="Luxury Bathroom Design">
-                    <div class="service-tag">Premium</div>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Bathrooms</h3>
-                    <p class="service-description">Transform your bathroom into a luxurious sanctuary with our complete design and installation service.</p>
-                    <a href="service-bathrooms.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
-
-            <div class="service-card" onclick="window.location='service-kitchens.html'">
-                <div class="service-image">
-                    <img src="./kitchen.jpg" alt="Modern Kitchen Design">
-                    <div class="service-tag">Premium</div>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Kitchens</h3>
-                    <p class="service-description">Bespoke kitchen designs that blend functionality with stunning aesthetics for the heart of your home.</p>
-                    <a href="service-kitchens.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
-
-            <div class="service-card" onclick="window.location='service-carpentry.html'">
-                <div class="service-image">
-                    <img src="./carpentry.jpg">
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Carpentry</h3>
-                    <p class="service-description">Precision woodwork from structural carpentry to bespoke joinery and custom furniture pieces.</p>
-                    <a href="service-carpentry.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
-
-            <div class="service-card" onclick="window.location='service-water-damage.html'">
-                <div class="service-image">
-                    <img src="./waterdamage.jpg" alt="Water Damage Restoration">
-                    <div class="service-tag">24/7</div>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Water Damage</h3>
-                    <p class="service-description">Rapid response and expert restoration to return your property to its former glory after water damage.</p>
-                    <a href="service-water-damage.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
-
-            <div class="service-card" onclick="window.location='service-fire-damage.html'">
-                <div class="service-image">
-                    <img src="./firedamage.jpg" alt="Fire Damage Restoration">
-                    <div class="service-tag">24/7</div>
-                </div>
-                <div class="service-content">
-                    <h3 class="service-title">Fire Damage</h3>
-                    <p class="service-description">Comprehensive fire damage restoration with compassionate service during difficult times.</p>
-                    <a href="service-fire-damage.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
+        <div
+          class="service-card"
+          onclick="window.location='service-bathrooms.html'"
+        >
+          <div class="service-image">
+            <img src="./bathroom.jpg" alt="Luxury Bathroom Design" />
+            <div class="service-tag">Premium</div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Bathrooms</h3>
+            <p class="service-description">
+              Transform your bathroom into a luxurious sanctuary with our
+              complete design and installation service.
+            </p>
+            <a href="service-bathrooms.html" class="service-link"
+              >Learn More →</a
+            >
+          </div>
         </div>
+
+        <div
+          class="service-card"
+          onclick="window.location='service-kitchens.html'"
+        >
+          <div class="service-image">
+            <img src="./kitchen.jpg" alt="Modern Kitchen Design" />
+            <div class="service-tag">Premium</div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Kitchens</h3>
+            <p class="service-description">
+              Bespoke kitchen designs that blend functionality with stunning
+              aesthetics for the heart of your home.
+            </p>
+            <a href="service-kitchens.html" class="service-link"
+              >Learn More →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="service-card"
+          onclick="window.location='service-carpentry.html'"
+        >
+          <div class="service-image">
+            <img src="./carpentry.jpg" />
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Carpentry</h3>
+            <p class="service-description">
+              Precision woodwork from structural carpentry to bespoke joinery
+              and custom furniture pieces.
+            </p>
+            <a href="service-carpentry.html" class="service-link"
+              >Learn More →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="service-card"
+          onclick="window.location='service-water-damage.html'"
+        >
+          <div class="service-image">
+            <img src="./waterdamage.jpg" alt="Water Damage Restoration" />
+            <div class="service-tag">24/7</div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Water Damage</h3>
+            <p class="service-description">
+              Rapid response and expert restoration to return your property to
+              its former glory after water damage.
+            </p>
+            <a href="service-water-damage.html" class="service-link"
+              >Learn More →</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="service-card"
+          onclick="window.location='service-fire-damage.html'"
+        >
+          <div class="service-image">
+            <img src="./firedamage.jpg" alt="Fire Damage Restoration" />
+            <div class="service-tag">24/7</div>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Fire Damage</h3>
+            <p class="service-description">
+              Comprehensive fire damage restoration with compassionate service
+              during difficult times.
+            </p>
+            <a href="service-fire-damage.html" class="service-link"
+              >Learn More →</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Preview -->
     <!-- About Preview -->
-<section class="about-preview">
-    <div class="about-content">
+    <section class="about-preview">
+      <div class="about-content">
         <div class="about-text">
-            <div class="section-tag">About DS Renovations</div>
-            <h2>Tradesmen That Stand the Test of Time</h2>
-            <p>With over 15 years of experience serving Staffordshire and the West Midlands, DS Renovations has built a reputation for delivering exceptional quality and service on every project.</p>
-            <p>Our team of skilled craftsmen combines traditional techniques with modern innovations to create beautiful, lasting results that exceed expectations.</p>
-            <div class="about-features">
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Fully Insured</h4>
-                        <p>Complete peace of mind</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Quality Guaranteed</h4>
-                        <p>2 Years workmanship warranty</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Professional Team</h4>
-                        <p>Certified and experienced</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Transparent Pricing</h4>
-                        <p>No hidden costs</p>
-                    </div>
-                </div>
+          <div class="section-tag">About DS Renovations</div>
+          <h2>Tradesmen That Stand the Test of Time</h2>
+          <p>
+            At DS Renovations, we specialise in delivering high-quality
+            renovation and property improvement services tailored to each
+            client’s needs. With experience across residential and commercial
+            projects, we take pride in transforming spaces with precision, care,
+            and attention to detail.
+          </p>
+          <p>
+            Our services include carpentry, plastering, kitchen fitting,
+            bathroom fitting, painting and decorating, laminate and wood
+            flooring, we also take on insurance work and subsidence work. We
+            also provide expert solutions for fire damage and water damage,
+            helping properties recover safely and efficiently.
+          </p>
+          <p>
+            Based in Rugeley, Staffordshire, we work locally and nationally,
+            covering projects across the whole of the United Kingdom. No matter
+            the size or scope of the job, our approach remains the same —
+            professional, reliable, and results-driven.
+          </p>
+          <p>
+            Our company is built on innovation, integrity, and results. We use
+            modern techniques, trusted materials, and clear communication to
+            ensure every project is completed to the highest standard. From
+            initial consultation to final finish, we are committed to delivering
+            workmanship you can rely on and results you can be proud of.
+          </p>
+          <p>
+            Get in touch today for a free, no-obligation quote. Email us at
+            info@dsrenovations.co.uk or contact us via our website and let’s
+            discuss your project.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Fully Insured</h4>
+                <p>Complete peace of mind</p>
+              </div>
             </div>
-            <a href="about.html" class="btn btn-primary">Learn More About Us →</a>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Quality Guaranteed</h4>
+                <p>2 Years workmanship warranty</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Professional Team</h4>
+                <p>Certified and experienced</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                <h4>Transparent Pricing</h4>
+                <p>No hidden costs</p>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-primary">Learn More About Us →</a>
         </div>
         <div class="about-images">
-            <div class="about-image-main">
-                <img src="./tradesmen.jpg" alt="DS Renovations Team">
-            </div>
-            <div class="about-badge">
-                <div class="about-badge-number">15+</div>
-                <div class="about-badge-text">Years Excellence</div>
-            </div>
+          <div class="about-image-main">
+            <img src="./tradesmen.jpg" alt="DS Renovations Team" />
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-number">15+</div>
+            <div class="about-badge-text">Years Excellence</div>
+          </div>
         </div>
-    </div>
-</section>
-
+      </div>
+    </section>
 
     <!-- Projects Gallery -->
     <section class="projects-section">
-        <div class="section-header">
-            <div class="section-tag">Our Work</div>
-            <h2 class="section-title">Recent Projects</h2>
-            <p class="section-description">Explore our portfolio of completed projects showcasing the quality and attention to detail we bring to every job.</p>
+      <div class="section-header">
+        <div class="section-tag">Our Work</div>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-description">
+          Explore our portfolio of completed projects showcasing the quality and
+          attention to detail we bring to every job.
+        </p>
+      </div>
+      <div class="projects-grid">
+        <div
+          class="project-card"
+          onclick="window.location='project-victorian-restoration.html'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=85"
+            alt="Victorian Home Restoration"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <div class="project-category">Restoration</div>
+            <h3 class="project-title">Victorian Home Restoration</h3>
+            <p class="project-description">
+              Complete restoration of a period property maintaining original
+              features while adding modern comforts.
+            </p>
+          </div>
         </div>
-        <div class="projects-grid">
-            <div class="project-card" onclick="window.location='project-victorian-restoration.html'">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=85" alt="Victorian Home Restoration" class="project-image">
-                <div class="project-overlay">
-                    <div class="project-category">Restoration</div>
-                    <h3 class="project-title">Victorian Home Restoration</h3>
-                    <p class="project-description">Complete restoration of a period property maintaining original features while adding modern comforts.</p>
-                </div>
-            </div>
 
-            <div class="project-card" onclick="window.location='project-modern-kitchen.html'">
-                <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=85" alt="Contemporary Kitchen" class="project-image">
-                <div class="project-overlay">
-                    <div class="project-category">Kitchen</div>
-                    <h3 class="project-title">Contemporary Kitchen</h3>
-                    <p class="project-description">Sleek modern kitchen design with premium finishes and smart storage solutions.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="window.location='project-luxury-bathroom.html'">
-                <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=85" alt="Luxury Bathroom Suite" class="project-image">
-                <div class="project-overlay">
-                    <div class="project-category">Bathroom</div>
-                    <h3 class="project-title">Luxury Bathroom Suite</h3>
-                    <p class="project-description">Spa-inspired bathroom featuring natural stone, underfloor heating, and premium fixtures.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="window.location='project-loft-conversion.html'">
-                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=85" alt="Loft Conversion" class="project-image">
-                <div class="project-overlay">
-                    <div class="project-category">Extension</div>
-                    <h3 class="project-title">Loft Conversion</h3>
-                    <p class="project-description">Stunning loft conversion creating a master bedroom suite with en-suite bathroom.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="window.location='project-fire-restoration.html'">
-                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=85" alt="Fire Damage Restoration" class="project-image">
-                <div class="project-overlay">
-                    <div class="project-category">Restoration</div>
-                    <h3 class="project-title">Fire Damage Recovery</h3>
-                    <p class="project-description">Complete restoration following fire damage, returning the property to pristine condition.</p>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="window.location='project-home-extension.html'">
-                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=85" alt="Home Extension" class="project-image">
-                <div class="project-overlay">
-                    <div class="project-category">Extension</div>
-                    <h3 class="project-title">Open Plan Extension</h3>
-                    <p class="project-description">Spacious rear extension creating a beautiful open-plan living space with bifold doors.</p>
-                </div>
-            </div>
+        <div
+          class="project-card"
+          onclick="window.location='project-modern-kitchen.html'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=85"
+            alt="Contemporary Kitchen"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <div class="project-category">Kitchen</div>
+            <h3 class="project-title">Contemporary Kitchen</h3>
+            <p class="project-description">
+              Sleek modern kitchen design with premium finishes and smart
+              storage solutions.
+            </p>
+          </div>
         </div>
-        <div class="view-all-projects">
-            <a href="gallery.html" class="btn btn-secondary">View Full Portfolio →</a>
+
+        <div
+          class="project-card"
+          onclick="window.location='project-luxury-bathroom.html'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=85"
+            alt="Luxury Bathroom Suite"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <div class="project-category">Bathroom</div>
+            <h3 class="project-title">Luxury Bathroom Suite</h3>
+            <p class="project-description">
+              Spa-inspired bathroom featuring natural stone, underfloor heating,
+              and premium fixtures.
+            </p>
+          </div>
         </div>
+
+        <div
+          class="project-card"
+          onclick="window.location='project-loft-conversion.html'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=85"
+            alt="Loft Conversion"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <div class="project-category">Extension</div>
+            <h3 class="project-title">Loft Conversion</h3>
+            <p class="project-description">
+              Stunning loft conversion creating a master bedroom suite with
+              en-suite bathroom.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="project-card"
+          onclick="window.location='project-fire-restoration.html'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=85"
+            alt="Fire Damage Restoration"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <div class="project-category">Restoration</div>
+            <h3 class="project-title">Fire Damage Recovery</h3>
+            <p class="project-description">
+              Complete restoration following fire damage, returning the property
+              to pristine condition.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="project-card"
+          onclick="window.location='project-home-extension.html'"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=85"
+            alt="Home Extension"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <div class="project-category">Extension</div>
+            <h3 class="project-title">Open Plan Extension</h3>
+            <p class="project-description">
+              Spacious rear extension creating a beautiful open-plan living
+              space with bifold doors.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="view-all-projects">
+        <a href="gallery.html" class="btn btn-secondary"
+          >View Full Portfolio →</a
+        >
+      </div>
     </section>
 
     <!-- Testimonials -->
     <section class="testimonials-section">
-        <div class="section-header">
-            <div class="section-tag">Testimonials</div>
-            <h2 class="section-title">What Our Clients Say</h2>
-            <p class="section-description">Don't just take our word for it - hear from our satisfied customers.</p>
-        </div>
-        <div class="testimonials-container">
-            <div class="testimonials-slider">
-                <div class="testimonial active">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Absolutely exceptional service from start to finish. The team transformed our dated bathroom into a stunning modern space. Their attention to detail and professionalism exceeded all expectations."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JM</div>
-                        <div class="author-info">
-                            <h4>James Morrison</h4>
-                            <p>Stafford • Bathroom Renovation</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"DS Renovations helped us through a very difficult time after our house fire. They were compassionate, efficient, and the quality of restoration work was outstanding. Can't thank them enough."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SP</div>
-                        <div class="author-info">
-                            <h4>Sarah Phillips</h4>
-                            <p>Rugeley • Fire Damage Restoration</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Our kitchen renovation was completed on time and within budget. The craftsmanship is superb and the team were always professional and courteous. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RB</div>
-                        <div class="author-info">
-                            <h4>Robert Barnes</h4>
-                            <p>Cannock • Kitchen Installation</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"The plastering work throughout our Victorian home was simply perfect. They respected the property's character while delivering a flawless modern finish. True craftsmen!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">EC</div>
-                        <div class="author-info">
-                            <h4>Emma Clarke</h4>
-                            <p>Lichfield • Period Property Renovation</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="section-header">
+        <div class="section-tag">Testimonials</div>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-description">
+          Don't just take our word for it - hear from our satisfied customers.
+        </p>
+      </div>
+      <div class="testimonials-container">
+        <div class="testimonials-slider">
+          <div class="testimonial active">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Absolutely exceptional service from start to finish. The team
+              transformed our dated bathroom into a stunning modern space. Their
+              attention to detail and professionalism exceeded all
+              expectations."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JM</div>
+              <div class="author-info">
+                <h4>James Morrison</h4>
+                <p>Stafford • Bathroom Renovation</p>
+              </div>
             </div>
-            <div class="testimonial-dots">
-                <span class="dot active" onclick="showTestimonial(0)"></span>
-                <span class="dot" onclick="showTestimonial(1)"></span>
-                <span class="dot" onclick="showTestimonial(2)"></span>
-                <span class="dot" onclick="showTestimonial(3)"></span>
+          </div>
+
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "DS Renovations helped us through a very difficult time after our
+              house fire. They were compassionate, efficient, and the quality of
+              restoration work was outstanding. Can't thank them enough."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SP</div>
+              <div class="author-info">
+                <h4>Sarah Phillips</h4>
+                <p>Rugeley • Fire Damage Restoration</p>
+              </div>
             </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Our kitchen renovation was completed on time and within budget.
+              The craftsmanship is superb and the team were always professional
+              and courteous. Highly recommended!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RB</div>
+              <div class="author-info">
+                <h4>Robert Barnes</h4>
+                <p>Cannock • Kitchen Installation</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The plastering work throughout our Victorian home was simply
+              perfect. They respected the property's character while delivering
+              a flawless modern finish. True craftsmen!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">EC</div>
+              <div class="author-info">
+                <h4>Emma Clarke</h4>
+                <p>Lichfield • Period Property Renovation</p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="testimonial-dots">
+          <span class="dot active" onclick="showTestimonial(0)"></span>
+          <span class="dot" onclick="showTestimonial(1)"></span>
+          <span class="dot" onclick="showTestimonial(2)"></span>
+          <span class="dot" onclick="showTestimonial(3)"></span>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Home?</h2>
-            <p>Get in touch today for a free, no-obligation consultation and quote. Let's bring your vision to life.</p>
-            <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary">Get Free Quote →</a>
-                <a href="tel:07553560801" class="btn btn-secondary">Call: 07553 560801</a>
-            </div>
-            <div class="cta-features">
-                <div class="cta-feature">
-                    <div class="cta-feature-icon">✓</div>
-                    <div class="cta-feature-text">
-                        <h4>Free Quotes</h4>
-                        <p>No obligation</p>
-                    </div>
-                </div>
-                <div class="cta-feature">
-                    <div class="cta-feature-icon">✓</div>
-                    <div class="cta-feature-text">
-                        <h4>Fast Response</h4>
-                        <p>Within 24 hours</p>
-                    </div>
-                </div>
-                <div class="cta-feature">
-                    <div class="cta-feature-icon">✓</div>
-                    <div class="cta-feature-text">
-                        <h4>Quality Assured</h4>
-                        <p>Guaranteed work</p>
-                    </div>
-                </div>
-            </div>
+      <div class="cta-content">
+        <h2>Ready to Transform Your Home?</h2>
+        <p>
+          Get in touch today for a free, no-obligation consultation and quote.
+          Let's bring your vision to life.
+        </p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary">Get Free Quote →</a>
+          <a href="tel:07553560801" class="btn btn-secondary"
+            >Call: 07553 560801</a
+          >
         </div>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            <div class="cta-feature-text">
+              <h4>Free Quotes</h4>
+              <p>No obligation</p>
+            </div>
+          </div>
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            <div class="cta-feature-text">
+              <h4>Fast Response</h4>
+              <p>Within 24 hours</p>
+            </div>
+          </div>
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            <div class="cta-feature-text">
+              <h4>Quality Assured</h4>
+              <p>Guaranteed work</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-about">
-                <h3>DS<span class="logo-accent">Renovations</span></h3>
-                <p>Staffordshire's trusted renovation and construction specialists, delivering exceptional quality and service for over 15 years.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/dsrenovations26" target="_blank" class="social-link" aria-label="Instagram">📷</a>
-                    <a href="https://www.tiktok.com/@dsrenovations26" target="_blank" class="social-link" aria-label="TikTok">🎵</a>
-                </div>
-            </div>
-
-            <div class="footer-column">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="service-plastering.html">Plastering</a></li>
-                    <li><a href="service-bathrooms.html">Bathrooms</a></li>
-                    <li><a href="service-kitchens.html">Kitchens</a></li>
-                    <li><a href="service-carpentry.html">Carpentry</a></li>
-                    <li><a href="service-water-damage.html">Water Damage</a></li>
-                    <li><a href="service-fire-damage.html">Fire Damage</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="services.html">All Services</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p><strong>Address:</strong><br>
-                Unit 2, Towers Business Park,<br>
-                Wheelhouse Road, Rugeley,<br>
-                Staffordshire WS15 1UZ</p>
-                <p><strong>Phone:</strong><br>
-                <a href="tel:07553560801">07553 560801</a></p>
-                <p><strong>Email:</strong><br>
-                <a href="mailto:info@dsrenovations.co.uk">info@dsrenovations.co.uk</a></p>
-            </div>
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>DS<span class="logo-accent">Renovations</span></h3>
+          <p>
+            Staffordshire's trusted renovation and construction specialists,
+            delivering exceptional quality and service for over 15 years.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/dsrenovations26"
+              target="_blank"
+              class="social-link"
+              aria-label="Instagram"
+              >📷</a
+            >
+            <a
+              href="https://www.tiktok.com/@dsrenovations26"
+              target="_blank"
+              class="social-link"
+              aria-label="TikTok"
+              >🎵</a
+            >
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 DS Renovations. All rights reserved. Company registered in England and Wales.</p>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="service-plastering.html">Plastering</a></li>
+            <li><a href="service-bathrooms.html">Bathrooms</a></li>
+            <li><a href="service-kitchens.html">Kitchens</a></li>
+            <li><a href="service-carpentry.html">Carpentry</a></li>
+            <li><a href="service-water-damage.html">Water Damage</a></li>
+            <li><a href="service-fire-damage.html">Fire Damage</a></li>
+          </ul>
         </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">All Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            <strong>Address:</strong><br />
+            Unit 2, Towers Business Park,<br />
+            Wheelhouse Road, Rugeley,<br />
+            Staffordshire WS15 1UZ
+          </p>
+          <p>
+            <strong>Phone:</strong><br />
+            <a href="tel:07553560801">07553 560801</a>
+          </p>
+          <p>
+            <strong>Email:</strong><br />
+            <a href="mailto:info@dsrenovations.co.uk"
+              >info@dsrenovations.co.uk</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 DS Renovations. All rights reserved. Company registered in
+          England and Wales.
+        </p>
+      </div>
     </footer>
 
     <script>
-        // Mobile Navigation
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
+      // Mobile Navigation
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
 
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileToggle.classList.toggle("active");
+      });
+
+      // Close mobile menu on link click
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          mobileToggle.classList.remove("active");
         });
+      });
 
-        // Close mobile menu on link click
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.classList.remove('active');
-            });
-        });
+      // Header Scroll Effect
+      const header = document.getElementById("header");
+      let lastScroll = 0;
 
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Testimonials Slider
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
-        const dots = document.querySelectorAll('.dot');
-
-        function showTestimonial(index) {
-            testimonials.forEach(t => t.classList.remove('active'));
-            dots.forEach(d => d.classList.remove('active'));
-            
-            testimonials[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentTestimonial = index;
+        if (currentScroll > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
         }
 
-        // Auto-rotate testimonials
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 6000);
+        lastScroll = currentScroll;
+      });
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Testimonials Slider
+      let currentTestimonial = 0;
+      const testimonials = document.querySelectorAll(".testimonial");
+      const dots = document.querySelectorAll(".dot");
+
+      function showTestimonial(index) {
+        testimonials.forEach((t) => t.classList.remove("active"));
+        dots.forEach((d) => d.classList.remove("active"));
+
+        testimonials[index].classList.add("active");
+        dots[index].classList.add("active");
+        currentTestimonial = index;
+      }
+
+      // Auto-rotate testimonials
+      setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      }, 6000);
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
+      });
     </script>
-</body>
+  </body>
 </html>
