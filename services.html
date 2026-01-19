@@ -1,755 +1,863 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - DS Renovations | Construction & Renovation Experts</title>
-    <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Our Services - DS Renovations | Construction & Renovation Experts
+    </title>
+    <link rel="icon" type="image/x-icon" href="logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --primary-navy: #0f1f3d;
-            --secondary-navy: #1a2b4a;
-            --gold: #d4a96c;
-            --light-gold: #e8c896;
-            --cream: #f9f7f4;
-            --white: #ffffff;
-            --text-dark: #2c3e50;
-            --text-light: #6c757d;
-            --border-light: #e0ddd8;
-        }
+      :root {
+        --primary-navy: #0f1f3d;
+        --secondary-navy: #1a2b4a;
+        --gold: #d4a96c;
+        --light-gold: #e8c896;
+        --cream: #f9f7f4;
+        --white: #ffffff;
+        --text-dark: #2c3e50;
+        --text-light: #6c757d;
+        --border-light: #e0ddd8;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-        .header {
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+      .header {
+        background: var(--white);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
 
-        .header.scrolled {
-            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
-        }
+      .header.scrolled {
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+      }
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 3rem;
-        }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 3rem;
+      }
 
-        .logo img {
-            height: 45px;
-            width: auto;
-        }
+      .logo img {
+        height: 45px;
+        width: auto;
+      }
 
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        color: var(--gold);
+      }
+
+      .nav-menu a:hover::after,
+      .nav-menu a.active::after {
+        width: 100%;
+      }
+
+      .cta-button {
+        background: var(--gold);
+        color: var(--white);
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        border: 2px solid var(--gold);
+      }
+
+      .cta-button:hover {
+        background: transparent;
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .mobile-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .mobile-toggle span {
+        width: 28px;
+        height: 3px;
+        background: var(--primary-navy);
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .page-hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-navy) 0%,
+          var(--secondary-navy) 100%
+        );
+        padding: 180px 3rem 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600")
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .page-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        color: var(--white);
+        margin-bottom: 1rem;
+        position: relative;
+        font-weight: 600;
+        letter-spacing: -1px;
+      }
+
+      .page-hero p {
+        color: var(--cream);
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        font-weight: 300;
+      }
+
+      .services-intro {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 3rem;
+        text-align: center;
+      }
+
+      .services-intro h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        color: var(--primary-navy);
+        margin-bottom: 1.5rem;
+      }
+
+      .services-intro p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+        margin-top: 60px;
+      }
+
+      .service-card {
+        background: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--gold);
+      }
+
+      .service-image {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+
+      .service-content {
+        padding: 3rem;
+      }
+
+      .service-content h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--primary-navy);
+        margin-bottom: 1rem;
+      }
+
+      .service-content p {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features {
+        list-style: none;
+        margin: 1.5rem 0;
+      }
+
+      .service-features li {
+        padding: 0.5rem 0;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .service-features li::before {
+        content: "✓";
+        color: var(--gold);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .service-link {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--gold);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .service-link:hover {
+        gap: 15px;
+        color: var(--primary-navy);
+      }
+
+      .service-link::after {
+        content: " →";
+        margin-left: 5px;
+        transition: margin-left 0.3s ease;
+      }
+
+      .service-link:hover::after {
+        margin-left: 10px;
+      }
+
+      .process-section {
+        background: var(--cream);
+        padding: 100px 3rem;
+      }
+
+      .process-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      .section-header h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: var(--primary-navy);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .section-header p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+      }
+
+      .process-step {
+        text-align: center;
+        position: relative;
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background: var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--white);
+        font-weight: 700;
+        margin: 0 auto 1.5rem;
+      }
+
+      .process-step h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        color: var(--primary-navy);
+        margin-bottom: 1rem;
+      }
+
+      .process-step p {
+        color: var(--text-light);
+        line-height: 1.8;
+      }
+
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-navy) 0%,
+          var(--secondary-navy) 100%
+        );
+        padding: 100px 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600")
+          center/cover;
+        opacity: 0.08;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .cta-content h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .cta-content p {
+        font-size: 1.3rem;
+        color: var(--cream);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+      }
+
+      .btn-primary {
+        background: var(--gold);
+        color: var(--white);
+        padding: 1rem 2.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        border: 2px solid var(--gold);
+        font-size: 1.1rem;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        background: transparent;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(212, 169, 108, 0.3);
+      }
+
+      .footer {
+        background: var(--primary-navy);
+        color: var(--white);
+        padding: 80px 3rem 30px;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 50px;
+      }
+
+      .footer-about h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--gold);
+      }
+
+      .footer-about p {
+        color: var(--cream);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-section h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: var(--gold);
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-section ul li a {
+        color: var(--cream);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: var(--gold);
+      }
+
+      .footer-bottom {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: var(--cream);
+      }
+
+      @media (max-width: 1024px) {
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            align-items: center;
+          position: fixed;
+          left: -100%;
+          top: 80px;
+          flex-direction: column;
+          background: var(--white);
+          width: 100%;
+          text-align: center;
+          transition: left 0.3s ease;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          padding: 2rem;
+          gap: 1.5rem;
         }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--gold);
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: var(--gold);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--gold);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--gold);
-            transform: translateY(-2px);
+        .nav-menu.active {
+          left: 0;
         }
 
         .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .mobile-toggle span {
-            width: 28px;
-            height: 3px;
-            background: var(--primary-navy);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .page-hero {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-            padding: 180px 3rem 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600') center/cover;
-            opacity: 0.1;
-        }
-
-        .page-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            position: relative;
-            font-weight: 600;
-            letter-spacing: -1px;
-        }
-
-        .page-hero p {
-            color: var(--cream);
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            font-weight: 300;
-        }
-
-        .services-intro {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 100px 3rem;
-            text-align: center;
-        }
-
-        .services-intro h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.5rem;
-        }
-
-        .services-intro p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
+          display: flex;
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            border-color: var(--gold);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-        }
-
-        .service-content {
-            padding: 3rem;
-        }
-
-        .service-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--primary-navy);
-            margin-bottom: 1rem;
-        }
-
-        .service-content p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .service-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--gold);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .service-link:hover {
-            gap: 15px;
-            color: var(--primary-navy);
-        }
-
-        .service-link::after {
-            content: ' →';
-            margin-left: 5px;
-            transition: margin-left 0.3s ease;
-        }
-
-        .service-link:hover::after {
-            margin-left: 10px;
-        }
-
-        .process-section {
-            background: var(--cream);
-            padding: 100px 3rem;
-        }
-
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
+          grid-template-columns: 1fr;
         }
 
         .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--white);
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-        }
-
-        .process-step h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 1rem;
-        }
-
-        .process-step p {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-            padding: 100px 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover;
-            opacity: 0.08;
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .cta-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .cta-content p {
-            font-size: 1.3rem;
-            color: var(--cream);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--gold);
-            font-size: 1.1rem;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 169, 108, 0.3);
-        }
-
-        .footer {
-            background: var(--primary-navy);
-            color: var(--white);
-            padding: 80px 3rem 30px;
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 50px;
+          grid-template-columns: 1fr;
+          gap: 40px;
         }
 
-        .footer-about h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
+        .page-hero h1 {
+          font-size: 2.5rem;
         }
 
-        .footer-about p {
-            color: var(--cream);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .nav-container {
+          padding: 1rem 1.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .services-intro,
+        .process-container {
+          padding: 60px 1.5rem;
         }
 
-        .footer-section h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
+        .process-steps {
+          grid-template-columns: 1fr;
         }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--cream);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: var(--cream);
-        }
-
-        @media (max-width: 1024px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                flex-direction: column;
-                background: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: left 0.3s ease;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                padding: 2rem;
-                gap: 1.5rem;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .page-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-container {
-                padding: 1rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .services-intro,
-            .process-container {
-                padding: 60px 1.5rem;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <a href="index.html"><img src="logo.png" alt="DS Renovations Logo"></a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="cta-button">Get Quote</a></li>
-            </ul>
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+      <nav class="nav-container">
+        <div class="logo">
+          <a href="index.html"
+            ><img src="logo.png" alt="DS Renovations Logo"
+          /></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="cta-button">Get Quote</a></li>
+        </ul>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
     </header>
 
     <section class="page-hero">
-        <h1>Our Services</h1>
-        <p>Comprehensive construction and renovation solutions for every project</p>
+      <h1>Our Services</h1>
+      <p>
+        Comprehensive construction and renovation solutions for every project
+      </p>
     </section>
 
     <section class="services-intro">
-        <h2>Transform Your Living Space</h2>
-        <p>From complete home renovations to specialized projects, we offer a full range of construction services delivered with exceptional craftsmanship and attention to detail.</p>
+      <h2>Transform Your Living Space</h2>
+      <p>
+        From complete home renovations to specialized projects, we offer a full
+        range of construction services delivered with exceptional craftsmanship
+        and attention to detail.
+      </p>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800" alt="Home Renovations" class="service-image">
-                <div class="service-content">
-                    <h3>Home Renovations</h3>
-                    <p>Transform your existing space into the home of your dreams with our comprehensive renovation services.</p>
-                    <ul class="service-features">
-                        <li>Complete property makeovers</li>
-                        <li>Kitchen and bathroom remodeling</li>
-                        <li>Interior redesign and modernization</li>
-                        <li>Structural modifications</li>
-                    </ul>
-                    <a href="service-home-renovations.html" class="service-link">Learn More</a>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800" alt="Loft Conversions" class="service-image">
-                <div class="service-content">
-                    <h3>Loft Conversions</h3>
-                    <p>Maximize your home's potential by converting unused loft space into beautiful, functional living areas.</p>
-                    <ul class="service-features">
-                        <li>Bedroom and office conversions</li>
-                        <li>Dormer and Velux installations</li>
-                        <li>Full insulation and finishing</li>
-                        <li>Planning and building regulations</li>
-                    </ul>
-                    <a href="service-loft-conversions.html" class="service-link">Learn More</a>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Extensions" class="service-image">
-                <div class="service-content">
-                    <h3>Extensions</h3>
-                    <p>Expand your living space with expertly designed and constructed extensions that seamlessly blend with your home.</p>
-                    <ul class="service-features">
-                        <li>Single and double-story extensions</li>
-                        <li>Side and rear extensions</li>
-                        <li>Orangeries and conservatories</li>
-                        <li>Open-plan living spaces</li>
-                    </ul>
-                    <a href="service-extensions.html" class="service-link">Learn More</a>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800" alt="New Builds" class="service-image">
-                <div class="service-content">
-                    <h3>New Builds</h3>
-                    <p>Build your perfect home from the ground up with our comprehensive new build construction services.</p>
-                    <ul class="service-features">
-                        <li>Custom home design and build</li>
-                        <li>Plot development and preparation</li>
-                        <li>Sustainable building practices</li>
-                        <li>Project management from start to finish</li>
-                    </ul>
-                    <a href="service-new-builds.html" class="service-link">Learn More</a>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800" alt="Property Restoration" class="service-image">
-                <div class="service-content">
-                    <h3>Property Restoration</h3>
-                    <p>Breathe new life into period properties with our specialized restoration and conservation services.</p>
-                    <ul class="service-features">
-                        <li>Period property restoration</li>
-                        <li>Heritage conservation work</li>
-                        <li>Structural repairs and stabilization</li>
-                        <li>Traditional building techniques</li>
-                    </ul>
-                    <a href="service-restorationns.html" class="service-link">Learn More</a>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800" alt="Kitchen Design" class="service-image">
-                <div class="service-content">
-                    <h3>Kitchen & Bathroom Design</h3>
-                    <p>Create stunning, functional spaces with our bespoke kitchen and bathroom design and installation services.</p>
-                    <ul class="service-features">
-                        <li>Custom kitchen design and fitting</li>
-                        <li>Luxury bathroom installations</li>
-                        <li>Premium fixtures and fittings</li>
-                        <li>Complete plumbing and electrical work</li>
-                    </ul>
-                    <a href="service-kitchen-bathroom.html" class="service-link">Learn More</a>
-                </div>
-            </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800"
+            alt="Home Renovations"
+            class="service-image"
+          />
+          <div class="service-content">
+            <h3>Home Renovations</h3>
+            <p>
+              Transform your existing space into the home of your dreams with
+              our comprehensive renovation services.
+            </p>
+            <ul class="service-features">
+              <li>Complete property makeovers</li>
+              <li>Kitchen and bathroom remodeling</li>
+              <li>Interior redesign and modernization</li>
+              <li>Structural modifications</li>
+            </ul>
+            <a href="service-home-renovations.html" class="service-link"
+              >Learn More</a
+            >
+          </div>
         </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800"
+            alt="Loft Conversions"
+            class="service-image"
+          />
+          <div class="service-content">
+            <h3>Loft Conversions</h3>
+            <p>
+              Maximize your home's potential by converting unused loft space
+              into beautiful, functional living areas.
+            </p>
+            <ul class="service-features">
+              <li>Bedroom and office conversions</li>
+              <li>Dormer and Velux installations</li>
+              <li>Full insulation and finishing</li>
+              <li>Planning and building regulations</li>
+            </ul>
+            <a href="service-loft-conversions.html" class="service-link"
+              >Learn More</a
+            >
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
+            alt="Extensions"
+            class="service-image"
+          />
+          <div class="service-content">
+            <h3>Extensions</h3>
+            <p>
+              Expand your living space with expertly designed and constructed
+              extensions that seamlessly blend with your home.
+            </p>
+            <ul class="service-features">
+              <li>Single and double-story extensions</li>
+              <li>Side and rear extensions</li>
+              <li>Orangeries and conservatories</li>
+              <li>Open-plan living spaces</li>
+            </ul>
+            <a href="service-extensions.html" class="service-link"
+              >Learn More</a
+            >
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800"
+            alt="New Builds"
+            class="service-image"
+          />
+          <div class="service-content">
+            <h3>New Builds</h3>
+            <p>
+              Build your perfect home from the ground up with our comprehensive
+              new build construction services.
+            </p>
+            <ul class="service-features">
+              <li>Custom home design and build</li>
+              <li>Plot development and preparation</li>
+              <li>Sustainable building practices</li>
+              <li>Project management from start to finish</li>
+            </ul>
+            <a href="service-new-builds.html" class="service-link"
+              >Learn More</a
+            >
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800"
+            alt="Property Restoration"
+            class="service-image"
+          />
+          <div class="service-content">
+            <h3>Property Restoration</h3>
+            <p>
+              Breathe new life into period properties with our specialized
+              restoration and conservation services.
+            </p>
+            <ul class="service-features">
+              <li>Period property restoration</li>
+              <li>Heritage conservation work</li>
+              <li>Structural repairs and stabilization</li>
+              <li>Traditional building techniques</li>
+            </ul>
+            <a href="service-restorationns.html" class="service-link"
+              >Learn More</a
+            >
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800"
+            alt="Kitchen Design"
+            class="service-image"
+          />
+          <div class="service-content">
+            <h3>Kitchen & Bathroom Design</h3>
+            <p>
+              Create stunning, functional spaces with our bespoke kitchen and
+              bathroom design and installation services.
+            </p>
+            <ul class="service-features">
+              <li>Custom kitchen design and fitting</li>
+              <li>Luxury bathroom installations</li>
+              <li>Premium fixtures and fittings</li>
+              <li>Complete plumbing and electrical work</li>
+            </ul>
+            <a href="service-kitchen-bathroom.html" class="service-link"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="process-section">
-        <div class="process-container">
-            <div class="section-header">
-                <h2>Our Process</h2>
-                <p>From initial consultation to final handover, we ensure a smooth and stress-free experience</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Consultation</h3>
-                    <p>We discuss your vision, requirements, and budget to understand your project goals.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Design & Planning</h3>
-                    <p>Our team creates detailed plans and handles all necessary permits and approvals.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Construction</h3>
-                    <p>Skilled craftsmen bring your project to life with precision and attention to detail.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Completion</h3>
-                    <p>Final walkthrough and handover of your beautifully completed project.</p>
-                </div>
-            </div>
+      <div class="process-container">
+        <div class="section-header">
+          <h2>Our Process</h2>
+          <p>
+            From initial consultation to final handover, we ensure a smooth and
+            stress-free experience
+          </p>
         </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>Consultation</h3>
+            <p>
+              We discuss your vision, requirements, and budget to understand
+              your project goals.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>Design & Planning</h3>
+            <p>
+              Our team creates detailed plans and handles all necessary permits
+              and approvals.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Construction</h3>
+            <p>
+              Skilled craftsmen bring your project to life with precision and
+              attention to detail.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>Completion</h3>
+            <p>
+              Final walkthrough and handover of your beautifully completed
+              project.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Get Started?</h2>
-            <p>Contact us today for a free consultation and quote. Let's bring your vision to life together.</p>
-            <a href="contact.html" class="btn-primary">Request Free Quote</a>
-        </div>
+      <div class="cta-content">
+        <h2>Ready to Get Started?</h2>
+        <p>
+          Contact us today for a free consultation and quote. Let's bring your
+          vision to life together.
+        </p>
+        <a href="contact.html" class="btn-primary">Request Free Quote</a>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-about">
-                <h3>DS Renovations</h3>
-                <p>Expert renovation, restoration, and construction services delivered with precision and care across Staffordshire and surrounding areas.</p>
-                <p><strong>Email:</strong> info@dsrenovations.co.uk<br>
-                <strong>Phone:</strong> +44 1234 567890</p>
-            </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="home-renovations.html">Home Renovations</a></li>
-                    <li><a href="loft-conversions.html">Loft Conversions</a></li>
-                    <li><a href="extensions.html">Extensions</a></li>
-                    <li><a href="new-builds.html">New Builds</a></li>
-                    <li><a href="restoration.html">Property Restoration</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Our Work</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Areas Served</h4>
-                <ul>
-                    <li>Staffordshire</li>
-                    <li>Stoke-on-Trent</li>
-                    <li>Stafford</li>
-                    <li>Burton upon Trent</li>
-                    <li>Cannock</li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-about">
+          <a href="index.html" class="logo">
+            <img
+              src="/images/latestlogo.jpg"
+              alt="DS Renovations - Built On Innovation, Integrity And Results"
+            />
+          </a>
+          <p>
+            Expert renovation, restoration, and construction services delivered
+            with precision and care across Staffordshire and surrounding areas.
+          </p>
+          <p>
+            <strong>Email:</strong> info@dsrenovations.co.uk<br />
+            <strong>Phone:</strong> +44 1234 567890
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 DS Renovations. All rights reserved. | Fully Insured & Certified</p>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="home-renovations.html">Home Renovations</a></li>
+            <li><a href="loft-conversions.html">Loft Conversions</a></li>
+            <li><a href="extensions.html">Extensions</a></li>
+            <li><a href="new-builds.html">New Builds</a></li>
+            <li><a href="restoration.html">Property Restoration</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Our Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Areas Served</h4>
+          <ul>
+            <li>Staffordshire</li>
+            <li>Stoke-on-Trent</li>
+            <li>Stafford</li>
+            <li>Burton upon Trent</li>
+            <li>Cannock</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 DS Renovations. All rights reserved. | Fully Insured &
+          Certified
+        </p>
+      </div>
     </footer>
 
     <script>
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const header = document.querySelector('.header');
+      const mobileToggle = document.querySelector(".mobile-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+      const header = document.querySelector(".header");
 
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
