@@ -1,819 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - DS Renovations | Expert Construction Services in Staffordshire</title>
-    <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-navy: #0f1f3d;
-            --secondary-navy: #1a2b4a;
-            --gold: #d4a96c;
-            --light-gold: #e8c896;
-            --cream: #f9f7f4;
-            --white: #ffffff;
-            --text-dark: #2c3e50;
-            --text-light: #6c757d;
-            --border-light: #e0ddd8;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .header {
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled {
-            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 3rem;
-        }
-
-        .logo img {
-            height: 45px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--gold);
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: var(--gold);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--gold);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .mobile-toggle span {
-            width: 28px;
-            height: 3px;
-            background: var(--primary-navy);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .page-hero {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-            padding: 180px 3rem 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600') center/cover;
-            opacity: 0.1;
-        }
-
-        .page-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            position: relative;
-            font-weight: 600;
-            letter-spacing: -1px;
-        }
-
-        .page-hero p {
-            color: var(--cream);
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            font-weight: 300;
-        }
-
-        .about-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 100px 3rem;
-        }
-
-        .about-intro {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-bottom: 120px;
-        }
-
-        .about-intro-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary-navy);
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            font-weight: 600;
-        }
-
-        .about-intro-content h2 span {
-            color: var(--gold);
-        }
-
-        .about-intro-content p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-intro-image {
-            position: relative;
-        }
-
-        .about-intro-image img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: var(--cream);
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--gold);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .values-section {
-            background: var(--cream);
-            padding: 100px 3rem;
-        }
-
-        .values-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .value-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
-
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-
-        .value-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-navy);
-            margin-bottom: 1rem;
-        }
-
-        .value-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .team-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 100px 3rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            margin-top: 60px;
-        }
-
-        .team-member {
-            text-align: center;
-        }
-
-        .team-photo {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover .team-photo {
-            transform: scale(1.05);
-        }
-
-        .team-member h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .team-role {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .team-bio {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-            padding: 100px 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover;
-            opacity: 0.08;
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .cta-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .cta-content p {
-            font-size: 1.3rem;
-            color: var(--cream);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--gold);
-            font-size: 1.1rem;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 169, 108, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--white);
-            font-size: 1.1rem;
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-navy);
-            transform: translateY(-3px);
-        }
-
-        .footer {
-            background: var(--primary-navy);
-            color: var(--white);
-            padding: 80px 3rem 30px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 50px;
-        }
-
-        .footer-about h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
-        }
-
-        .footer-about p {
-            color: var(--cream);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-section h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--cream);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: var(--cream);
-        }
-
-        @media (max-width: 1024px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                flex-direction: column;
-                background: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: left 0.3s ease;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                padding: 2rem;
-                gap: 1.5rem;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .about-intro {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .page-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-container {
-                padding: 1rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .about-section,
-            .values-container,
-            .team-section {
-                padding: 60px 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About DS Renovations | Built on Innovation, Integrity & Results</title>
+  <link rel="icon" type="image/x-icon" href="logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #d4af37;
+      --accent-dark: #b8941f;
+      --text-dark: #1e293b;
+      --text-gray: #64748b;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border-light: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-white);
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid transparent;
+    }
+
+    header.scrolled {
+      box-shadow: 0 4px 30px rgba(15, 23, 42, 0.08);
+      border-bottom-color: var(--border-light);
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      max-width: 280px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .logo img {
+        height: 40px;
+        max-width: 220px;
+      }
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: color 0.3s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-menu a::before {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--accent);
+    }
+
+    .nav-menu a:hover::before,
+    .nav-menu a.active::before {
+      width: 100%;
+    }
+
+    .cta-nav {
+      background: var(--accent);
+      color: var(--bg-white) !important;
+      padding: 0.75rem 1.75rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-nav::before {
+      display: none;
+    }
+
+    .cta-nav:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-toggle span {
+      width: 26px;
+      height: 2px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hero {
+      margin-top: 92px;
+      padding: 120px 3rem 80px;
+      background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.96) 0%,
+          rgba(30, 41, 59, 0.94) 100%
+        ),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80")
+          center/cover;
+      color: var(--bg-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 25% 25%,
+        rgba(212, 175, 55, 0.15),
+        transparent 55%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 850px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.9;
+    }
+
+    .about-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 3rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-copy h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      letter-spacing: -1px;
+    }
+
+    .about-copy p {
+      color: var(--text-gray);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 1.1rem;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .feature-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-light);
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-light);
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .feature-chip span {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .about-media {
+      position: relative;
+    }
+
+    .about-media img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 16px 50px rgba(15, 23, 42, 0.18);
+    }
+
+    .badge-card {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      background: var(--primary);
+      color: var(--bg-white);
+      padding: 24px 26px;
+      border-radius: 14px;
+      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.2);
+      max-width: 240px;
+    }
+
+    .badge-number {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .badge-text {
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .stats {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--bg-light);
+      padding: 24px;
+      border-radius: 14px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+
+    .stat-value {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+
+    .values {
+      padding: 80px 3rem;
+      background: var(--bg-light);
+    }
+
+    .values-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .values-header h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.6rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .values-header p {
+      color: var(--text-gray);
+      font-size: 1.05rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      background: var(--bg-white);
+      border-radius: 14px;
+      padding: 22px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+      display: grid;
+      gap: 10px;
+    }
+
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(212, 175, 55, 0.18);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .value-card h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .value-card p {
+      color: var(--text-gray);
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+
+    .cta-section {
+      padding: 90px 3rem;
+      background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        ),
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=90")
+          center/cover;
+      background-blend-mode: multiply;
+      color: var(--bg-white);
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.75rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .btn {
+      padding: 1rem 2.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-white);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--bg-white);
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--bg-white);
+      transform: translateY(-3px);
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--bg-white);
+      padding: 5rem 3rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-about p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 0.975rem;
+    }
+
+    .footer-meta {
+      display: inline-block;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-column h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--bg-white);
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-column a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-column a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1080px) {
+      .about-section {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .nav-menu {
+        position: fixed;
+        top: 88px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 88px);
+        background: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 3rem 2rem;
+        gap: 2rem;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .mobile-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .hero {
+        padding: 100px 1.5rem 70px;
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-section,
+      .values,
+      .stats {
+        padding: 60px 1.5rem;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <a href="index.html"><img src="logo.png" alt="DS Renovations Logo"></a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="cta-button">Get Quote</a></li>
-            </ul>
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+  <header id="header">
+    <nav>
+      <a href="index.html" class="logo">
+        <img
+          src="/images/latestlogo.jpg"
+          alt="DS Renovations - Built On Innovation, Integrity And Results"
+        />
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="cta-nav">Get Quote</a></li>
+      </ul>
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-    <section class="page-hero">
-        <h1>About DS Renovations</h1>
-        <p>Built on Innovation, Integrity and Results</p>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="section-tag">About DS Renovations</div>
+      <h1>Built on Innovation, Integrity, and Results</h1>
+      <p>
+        We specialise in high-quality renovation and property improvement services tailored to each client’s needs.
+        From carpentry and plastering to full kitchen and bathroom fit-outs, our experienced tradespeople deliver
+        precision, care, and reliability on every project.
+      </p>
+    </div>
+  </section>
 
-    <section class="about-section">
-        <div class="about-intro">
-            <div class="about-intro-content">
-                <h2>Tradesmen That Stand the Test of Time</h2>
-                <p>
-            At DS Renovations, we specialise in delivering high-quality
-            renovation and property improvement services tailored to each
-            client’s needs. With experience across residential and commercial
-            projects, we take pride in transforming spaces with precision, care,
-            and attention to detail.
-          </p>
-          <p>
-            Our services include carpentry, plastering, kitchen fitting,
-            bathroom fitting, painting and decorating, laminate and wood
-            flooring, we also take on insurance work and subsidence work. We
-            also provide expert solutions for fire damage and water damage,
-            helping properties recover safely and efficiently.
-          </p>
-          <p>
-            Based in Rugeley, Staffordshire, we work locally and nationally,
-            covering projects across the whole of the United Kingdom. No matter
-            the size or scope of the job, our approach remains the same —
-            professional, reliable, and results-driven.
-          </p>
-          <p>
-            Our company is built on innovation, integrity, and results. We use
-            modern techniques, trusted materials, and clear communication to
-            ensure every project is completed to the highest standard. From
-            initial consultation to final finish, we are committed to delivering
-            workmanship you can rely on and results you can be proud of.
-          </p>
-          <p>
-            Get in touch today for a free, no-obligation quote. Email us at
-            info@dsrenovations.co.uk or contact us via our website and let’s
-            discuss your project.
-          </p>
-            </div>
-            <div class="about-intro-image">
-                <img src="./images/tv.jpg" alt="DS Renovations team working">
-            </div>
+  <section class="about-section">
+    <div class="about-copy">
+      <h2>Tradesmen That Stand the Test of Time</h2>
+      <p>
+        Based in Rugeley, Staffordshire, we work locally and nationally across the UK. No matter the size or scope of the job,
+        our approach remains the same — professional, reliable, and results-driven.
+      </p>
+      <p>
+        We provide carpentry, plastering, kitchen fitting, bathroom fitting, painting and decorating, laminate and wood flooring,
+        insurance work, subsidence work, and expert solutions for fire and water damage. Modern techniques, trusted materials,
+        and clear communication keep every project on track and to the highest standard.
+      </p>
+      <p>
+        Get in touch today for a free, no-obligation quote at info@dsrenovations.co.uk — let’s discuss your project.
+      </p>
+      <div class="feature-list">
+        <div class="feature-chip"><span>✓</span> Fully insured</div>
+        <div class="feature-chip"><span>✓</span> 2-year workmanship warranty</div>
+        <div class="feature-chip"><span>✓</span> Certified, experienced team</div>
+        <div class="feature-chip"><span>✓</span> Transparent pricing</div>
+      </div>
+    </div>
+    <div class="about-media">
+      <img src="./images/tv.jpg" alt="DS Renovations team working" />
+      <div class="badge-card">
+        <div class="badge-number">15+</div>
+        <div class="badge-text">Years of Excellence</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-card">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">200+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Team Members</div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="values-inner">
+      <div class="values-header">
+        <div class="section-tag">Our Core Values</div>
+        <h3>The Principles Guiding Every Project</h3>
+        <p>Excellence, integrity, and innovation underpin our approach to every build and restoration.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h4>Excellence</h4>
+          <p>We pursue perfection in every detail, from the foundations to the finishing touches.</p>
         </div>
-
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">200+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Client Satisfaction</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Team Members</div>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <h4>Integrity</h4>
+          <p>Honest communication and transparent pricing form the foundation of our client relationships.</p>
         </div>
-    </section>
-
-    <section class="values-section">
-        <div class="values-container">
-            <div class="section-header">
-                <h2>Our Core Values</h2>
-                <p>The principles that guide every project we undertake</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">🏆</div>
-                    <h3>Excellence</h3>
-                    <p>We pursue perfection in every detail, from the foundation to the finishing touches. Our craftsmen take pride in delivering work that exceeds expectations.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>Integrity</h3>
-                    <p>Honest communication, transparent pricing, and ethical business practices form the foundation of our relationships with clients and partners.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">💡</div>
-                    <h3>Innovation</h3>
-                    <p>We combine traditional craftsmanship with modern techniques and materials to create spaces that are both timeless and contemporary.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">⏰</div>
-                    <h3>Reliability</h3>
-                    <p>We respect your time and investment. Projects are completed on schedule and within budget, without compromising on quality.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🎯</div>
-                    <h3>Precision</h3>
-                    <p>Every measurement, every cut, every installation is executed with meticulous attention to detail and accuracy.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">❤️</div>
-                    <h3>Care</h3>
-                    <p>We treat your home with the respect it deserves, ensuring clean work sites and minimal disruption to your daily life.</p>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h4>Innovation</h4>
+          <p>We blend traditional craftsmanship with modern techniques and materials.</p>
         </div>
-    </section>
-
-    
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Let's discuss how we can bring your vision to life with our expertise and dedication to excellence.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-primary">Get Free Quote</a>
-                <a href="gallery.html" class="btn-secondary">View Our Work</a>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <h4>Reliability</h4>
+          <p>Projects are delivered on schedule and within budget without compromising quality.</p>
         </div>
-    </section>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h4>Precision</h4>
+          <p>Every measurement and installation is executed with meticulous attention to detail.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h4>Care</h4>
+          <p>We treat your home with respect, keeping sites clean and disruption minimal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-about">
-                 <a href="index.html" class="logo">
+  <section class="cta-section">
+    <div class="cta-content">
+      <div class="section-tag">Work With Us</div>
+      <h2>Ready to Start Your Project?</h2>
+      <p>Let’s bring your vision to life with our expertise and dedication to excellence.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Get Free Quote</a>
+        <a href="gallery.html" class="btn btn-secondary">View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+           <a href="index.html" class="logo">
           <img
             src="/images/latestlogo.jpg"
             alt="DS Renovations - Built On Innovation, Integrity And Results"
           />
         </a>
-                <p>Expert renovation, restoration, and construction services delivered with precision and care across Staffordshire and surrounding areas.</p>
-                <p><strong>Email:</strong> info@dsrenovations.co.uk<br>
-                <strong>Phone:</strong>07553 560801</p>
-            </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="home-renovations.html">Home Renovations</a></li>
-                    <li><a href="loft-conversions.html">Loft Conversions</a></li>
-                    <li><a href="extensions.html">Extensions</a></li>
-                    <li><a href="new-builds.html">New Builds</a></li>
-                    <li><a href="restoration.html">Property Restoration</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Our Work</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Areas Served</h4>
-                <ul>
-                    <li>Staffordshire</li>
-                    <li>Stoke-on-Trent</li>
-                    <li>Stafford</li>
-                    <li>Burton upon Trent</li>
-                    <li>Cannock</li>
-                </ul>
-            </div>
+        <p>
+          Staffordshire's trusted renovation and construction specialists,
+          delivering exceptional quality and service for over 15 years.
+        </p>
+        <div class="footer-meta">
+          Dans Specialist Renovations Ltd<br />
+          Trading As DS Renovations<br />
+          Company Registration: 16974951<br />
+          VAT Registration Number:
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 DS Renovations. All rights reserved. | Fully Insured & Certified</p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/dsrenovations26"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i></a>
+
+          <a
+            href="https://www.tiktok.com/@dsrenovations26"
+            target="_blank"
+            aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i></a>
         </div>
-    </footer>
+      </div>
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#plastering">Plastering & Boarding</a></li>
+          <li><a href="services.html#carpentry">Carpentry</a></li>
+          <li><a href="services.html#decorating">Paint & Decorating</a></li>
+          <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
+          <li><a href="services.html#bathrooms">Bathroom Fitting</a></li>
+          <li><a href="services.html#flood-restoration">Flood Restoration</a></li>
+          <li><a href="services.html#fire-restoration">Fire Restoration</a></li>
+          <li><a href="services.html#subsidence">Subsidence Work</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <strong>Address:</strong><br />
+          Unit 2, Towers Business Park,<br />
+          Wheelhouse Road, Rugeley,<br />
+          Staffordshire WS15 1UZ
+        </p>
+        <p><strong>Phone:</strong> <a href="tel:07553560801">07553 560801</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@dsrenovations.co.uk">info@dsrenovations.co.uk</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 DS Renovations. All rights reserved. Company registered in
+        England and Wales.
+      </p>
+    </div>
+  </footer>
 
-    <script>
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const header = document.querySelector('.header');
+  <script>
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navMenu = document.getElementById("navMenu");
+    const header = document.getElementById("header");
 
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+    mobileToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      mobileToggle.classList.toggle("active");
+    });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        mobileToggle.classList.remove("active");
+      });
+    });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
 </body>
 </html>

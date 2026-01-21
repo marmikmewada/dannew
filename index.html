@@ -221,17 +221,26 @@
       .hero-badge {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        color: var(--accent);
-        padding: 0.6rem 1.25rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
+        gap: 10px;
+        background: rgba(15, 23, 42, 0.82);
+        border: 1px solid rgba(226, 232, 240, 0.35);
+        color: var(--bg-white);
+        padding: 0.55rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.82rem;
         font-weight: 600;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         margin-bottom: 2rem;
         animation: fadeSlideDown 0.8s ease-out;
+      }
+
+      .hero-badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.28);
       }
 
       .hero h1 {
@@ -923,8 +932,20 @@
       .footer-about p {
         color: rgba(255, 255, 255, 0.7);
         line-height: 1.8;
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
         font-size: 0.975rem;
+      }
+
+      .footer-meta {
+        display: inline-block;
+        padding: 0.85rem 1rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.75rem;
       }
 
       .social-links {
@@ -1236,7 +1257,8 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-badge">
-          ⭐ Trusted by 200+ Homeowners in Staffordshire
+          <span class="hero-badge-dot"></span>
+          TRUSTED BY 200+ HOMEOWNERS IN STAFFORDSHIRE
         </div>
         <h1>Exceptional Tradesmen for Your Dream Home</h1>
         <p class="hero-subtitle">
@@ -1287,7 +1309,7 @@
       <div class="services-grid">
         <div
           class="service-card"
-          onclick="window.location='service-plastering.html'"
+          onclick="window.location='services.html#plastering'"
         >
           <div class="service-image">
             <img
@@ -1302,7 +1324,7 @@
               Flawless walls and ceilings with expert plastering techniques.
               From smooth finishes to decorative plasterwork.
             </p>
-            <a href="service-plastering.html" class="service-link"
+            <a href="services.html#plastering" class="service-link"
               >Learn More →</a
             >
           </div>
@@ -1310,7 +1332,7 @@
 
         <div
           class="service-card"
-          onclick="window.location='service-bathrooms.html'"
+          onclick="window.location='services.html#bathrooms'"
         >
           <div class="service-image">
             <img src="./bathroom.jpg" alt="Luxury Bathroom Design" />
@@ -1322,7 +1344,7 @@
               Transform your bathroom into a luxurious sanctuary with our
               complete design and installation service.
             </p>
-            <a href="service-bathrooms.html" class="service-link"
+            <a href="services.html#bathrooms" class="service-link"
               >Learn More →</a
             >
           </div>
@@ -1330,7 +1352,7 @@
 
         <div
           class="service-card"
-          onclick="window.location='service-kitchens.html'"
+          onclick="window.location='services.html#kitchens'"
         >
           <div class="service-image">
             <img src="./kitchen.jpg" alt="Modern Kitchen Design" />
@@ -1342,7 +1364,7 @@
               Bespoke kitchen designs that blend functionality with stunning
               aesthetics for the heart of your home.
             </p>
-            <a href="service-kitchens.html" class="service-link"
+            <a href="services.html#kitchens" class="service-link"
               >Learn More →</a
             >
           </div>
@@ -1350,7 +1372,7 @@
 
         <div
           class="service-card"
-          onclick="window.location='service-carpentry.html'"
+          onclick="window.location='services.html#carpentry'"
         >
           <div class="service-image">
             <img src="./carpentry.jpg" />
@@ -1361,7 +1383,7 @@
               Precision woodwork from structural carpentry to bespoke joinery
               and custom furniture pieces.
             </p>
-            <a href="service-carpentry.html" class="service-link"
+            <a href="services.html#carpentry" class="service-link"
               >Learn More →</a
             >
           </div>
@@ -1369,7 +1391,7 @@
 
         <div
           class="service-card"
-          onclick="window.location='service-water-damage.html'"
+          onclick="window.location='services.html#flood-restoration'"
         >
           <div class="service-image">
             <img src="./waterdamage.jpg" alt="Water Damage Restoration" />
@@ -1381,7 +1403,7 @@
               Rapid response and expert restoration to return your property to
               its former glory after water damage.
             </p>
-            <a href="service-water-damage.html" class="service-link"
+            <a href="services.html#flood-restoration" class="service-link"
               >Learn More →</a
             >
           </div>
@@ -1389,7 +1411,7 @@
 
         <div
           class="service-card"
-          onclick="window.location='service-fire-damage.html'"
+          onclick="window.location='services.html#fire-restoration'"
         >
           <div class="service-image">
             <img src="./firedamage.jpg" alt="Fire Damage Restoration" />
@@ -1401,7 +1423,7 @@
               Comprehensive fire damage restoration with compassionate service
               during difficult times.
             </p>
-            <a href="service-fire-damage.html" class="service-link"
+            <a href="services.html#fire-restoration" class="service-link"
               >Learn More →</a
             >
           </div>
@@ -1757,6 +1779,12 @@
             Staffordshire's trusted renovation and construction specialists,
             delivering exceptional quality and service for over 15 years.
           </p>
+          <div class="footer-meta">
+            Dans Specialist Renovations Ltd<br />
+            Trading As DS Renovations<br />
+            Company Registration: 16974951<br />
+            VAT Registration Number:
+          </div>
           <div class="social-links">
             <a
               href="https://www.instagram.com/dsrenovations26"
@@ -1775,12 +1803,14 @@
         <div class="footer-column">
           <h4>Services</h4>
           <ul>
-            <li><a href="service-plastering.html">Plastering</a></li>
-            <li><a href="service-bathrooms.html">Bathrooms</a></li>
-            <li><a href="service-kitchens.html">Kitchens</a></li>
-            <li><a href="service-carpentry.html">Carpentry</a></li>
-            <li><a href="service-water-damage.html">Water Damage</a></li>
-            <li><a href="service-fire-damage.html">Fire Damage</a></li>
+            <li><a href="services.html#plastering">Plastering & Boarding</a></li>
+            <li><a href="services.html#carpentry">Carpentry</a></li>
+            <li><a href="services.html#decorating">Paint & Decorating</a></li>
+            <li><a href="services.html#kitchens">Kitchen Fitting</a></li>
+            <li><a href="services.html#bathrooms">Bathroom Fitting</a></li>
+            <li><a href="services.html#flood-restoration">Flood Restoration</a></li>
+            <li><a href="services.html#fire-restoration">Fire Restoration</a></li>
+            <li><a href="services.html#subsidence">Subsidence Work</a></li>
           </ul>
         </div>
 
