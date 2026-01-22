@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact DS Renovations | Request a Free Quote</title>
-  <link rel="icon" type="image/x-icon" href="logo.ico" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -695,9 +695,7 @@
         <button type="submit" class="submit-btn">Send Enquiry</button>
         <div id="formStatus" class="form-status"></div>
       </form>
-      <p style="margin-top:12px;color:var(--text-gray);font-size:0.92rem;">
-        This form uses EmailJS. Replace the placeholders in the script with your EmailJS Public Key, Service ID, and Template ID to start receiving submissions.
-      </p>
+      
     </div>
   </section>
 
@@ -715,14 +713,11 @@
       <div class="footer-about">
            <a href="index.html" class="logo">
           <img
-            src="/images/latestlogo.jpg"
+            src="./base_textlogo_transparent_background.pdf (1).png"
             alt="DS Renovations - Built On Innovation, Integrity And Results"
           />
         </a>
-        <p>
-          Staffordshire's trusted renovation and construction specialists,
-          delivering exceptional quality and service for over 15 years.
-        </p>
+        <br/>
         <div class="footer-meta">
           Dans Specialist Renovations Ltd<br />
           Trading As DS Renovations<br />
@@ -770,7 +765,7 @@
           <strong>Address:</strong><br />
           Unit 2, Towers Business Park,<br />
           Wheelhouse Road, Rugeley,<br />
-          Staffordshire WS15 1UZ
+          Staffordshire WS15 1UY
         </p>
         <p><strong>Phone:</strong> <a href="tel:07553560801">07553 560801</a></p>
         <p><strong>Email:</strong> <a href="mailto:info@dsrenovations.co.uk">info@dsrenovations.co.uk</a></p>
@@ -784,66 +779,63 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    const mobileToggle = document.getElementById("mobileToggle");
-    const navMenu = document.getElementById("navMenu");
-    const header = document.getElementById("header");
-    const form = document.getElementById("contactForm");
-    const statusEl = document.getElementById("formStatus");
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ===== DOM ELEMENTS =====
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navMenu = document.getElementById("navMenu");
+  const header = document.getElementById("header");
+  const form = document.getElementById("contactForm");
+  const statusEl = document.getElementById("formStatus");
 
-    // TODO: replace with your EmailJS credentials
-    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+  // ===== EMAILJS CONFIG (YOUR REAL KEYS) =====
+  const EMAILJS_PUBLIC_KEY = "GtE2usUQXnjcWH1dU";
+  const EMAILJS_SERVICE_ID = "service_z752jj5";
+  const EMAILJS_TEMPLATE_ID = "template_nzjfxyl";
 
-    if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
+  // Initialise EmailJS
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  // ===== MOBILE MENU =====
+  mobileToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    mobileToggle.classList.toggle("active");
+  });
+
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      mobileToggle.classList.remove("active");
+    });
+  });
+
+  // ===== HEADER SCROLL =====
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
     }
+  });
 
-    mobileToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-      mobileToggle.classList.toggle("active");
-    });
+  // ===== CONTACT FORM SUBMIT =====
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    statusEl.textContent = "Sending…";
 
-    navMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        mobileToggle.classList.remove("active");
+    emailjs
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+      .then(() => {
+        statusEl.textContent = "Thank you! Your enquiry has been sent.";
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        statusEl.textContent =
+          "Something went wrong. Please try again or contact us directly.";
       });
-    });
+  });
+</script>
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      statusEl.textContent = "Sending...";
-
-      if (
-        EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY" ||
-        EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID" ||
-        EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID"
-      ) {
-        statusEl.textContent = "Add your EmailJS keys to enable the form.";
-        return;
-      }
-
-      emailjs
-        .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
-        .then(() => {
-          statusEl.textContent = "Thank you! Your enquiry has been sent.";
-          form.reset();
-        })
-        .catch(() => {
-          statusEl.textContent = "Something went wrong. Please try again.";
-        });
-    });
-  </script>
 </body>
 </html>
